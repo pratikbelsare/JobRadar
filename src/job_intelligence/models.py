@@ -154,6 +154,7 @@ class Company(Model):
     name: NonEmptyText
     career_url: AnyHttpUrl
     connector_type: ConnectorType = ConnectorType.GENERIC
+    connector_config: dict[str, NonEmptyText] = Field(default_factory=dict)
     enabled: bool = True
     last_checked_at: datetime | None = None
     last_success_at: datetime | None = None

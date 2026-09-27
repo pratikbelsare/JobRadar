@@ -11,6 +11,8 @@ from pydantic import (
     ConfigDict,
     Field,
     NonNegativeFloat,
+    NonNegativeInt,
+    PositiveFloat,
     PositiveInt,
     model_validator,
 )
@@ -37,6 +39,9 @@ class Settings(BaseModel):
     embedding_model_id: NonEmptyText | None = None
     resume_max_size_bytes: PositiveInt | None = None
     candidate_profile_directory: Path | None = None
+    http_timeout_seconds: PositiveFloat | None = None
+    http_user_agent: NonEmptyText | None = None
+    http_max_retries: NonNegativeInt | None = None
 
     @model_validator(mode="after")
     def validate_experience_range(self) -> Settings:
@@ -73,6 +78,9 @@ class Settings(BaseModel):
             embedding_model_id=_read_optional(values, prefix + "EMBEDDING_MODEL_ID"),
             resume_max_size_bytes=_read_int(values, prefix + "RESUME_MAX_SIZE_BYTES"),
             candidate_profile_directory=_read_optional(values, prefix + "PROFILE_DIRECTORY"),
+            http_timeout_seconds=_read_float(values, prefix + "HTTP_TIMEOUT_SECONDS"),
+            http_user_agent=_read_optional(values, prefix + "HTTP_USER_AGENT"),
+            http_max_retries=_read_int(values, prefix + "HTTP_MAX_RETRIES"),
         )
 
 
