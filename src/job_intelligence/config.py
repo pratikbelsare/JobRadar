@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from collections.abc import Mapping
+from pathlib import Path
 
 from pydantic import (
     BaseModel,
@@ -34,6 +35,8 @@ class Settings(BaseModel):
     aws_region: NonEmptyText | None = None
     job_analysis_model_id: NonEmptyText | None = None
     embedding_model_id: NonEmptyText | None = None
+    resume_max_size_bytes: PositiveInt | None = None
+    candidate_profile_directory: Path | None = None
 
     @model_validator(mode="after")
     def validate_experience_range(self) -> Settings:
@@ -68,6 +71,8 @@ class Settings(BaseModel):
             aws_region=_read_optional(values, prefix + "AWS_REGION"),
             job_analysis_model_id=_read_optional(values, prefix + "JOB_ANALYSIS_MODEL_ID"),
             embedding_model_id=_read_optional(values, prefix + "EMBEDDING_MODEL_ID"),
+            resume_max_size_bytes=_read_int(values, prefix + "RESUME_MAX_SIZE_BYTES"),
+            candidate_profile_directory=_read_optional(values, prefix + "PROFILE_DIRECTORY"),
         )
 
 

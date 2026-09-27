@@ -5,6 +5,7 @@ import pytest
 from pydantic import ValidationError
 
 from job_intelligence.models import (
+    CandidatePreferences,
     CandidateProfile,
     Company,
     FeedbackLabel,
@@ -15,6 +16,7 @@ from job_intelligence.models import (
     ScanRun,
     UserFeedback,
     WorkExperience,
+    WorkMode,
 )
 
 
@@ -24,6 +26,7 @@ def test_core_models_construct_with_valid_values() -> None:
         target_roles=["Machine Learning Engineer"],
         experience_years=2.5,
         skills=["Python"],
+        preferences=CandidatePreferences(preferred_work_modes=[WorkMode.REMOTE]),
     )
     job = Job(
         source_job_id="job-123",
@@ -69,6 +72,7 @@ def test_core_models_construct_with_valid_values() -> None:
 
     assert company.enabled
     assert profile.experience_years == 2.5
+    assert profile.preferences.preferred_work_modes == [WorkMode.REMOTE]
     assert job.source_job_id == "job-123"
     assert version.version_number == 1
     assert analysis.model_id == "provider/model-id"

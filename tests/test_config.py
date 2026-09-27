@@ -15,6 +15,8 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
             "JOB_INTELLIGENCE_AWS_REGION": "ap-south-1",
             "JOB_INTELLIGENCE_JOB_ANALYSIS_MODEL_ID": "provider/job-model",
             "JOB_INTELLIGENCE_EMBEDDING_MODEL_ID": "provider/embedding-model",
+            "JOB_INTELLIGENCE_RESUME_MAX_SIZE_BYTES": "5000000",
+            "JOB_INTELLIGENCE_PROFILE_DIRECTORY": "data/profiles",
         }
     )
 
@@ -26,6 +28,8 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
     assert settings.aws_region == "ap-south-1"
     assert settings.job_analysis_model_id == "provider/job-model"
     assert settings.embedding_model_id == "provider/embedding-model"
+    assert settings.resume_max_size_bytes == 5000000
+    assert str(settings.candidate_profile_directory) == "data\\profiles"
 
 
 def test_settings_have_no_user_or_provider_specific_defaults() -> None:
@@ -35,6 +39,8 @@ def test_settings_have_no_user_or_provider_specific_defaults() -> None:
     assert settings.target_locations == []
     assert settings.aws_region is None
     assert settings.job_analysis_model_id is None
+    assert settings.resume_max_size_bytes is None
+    assert settings.candidate_profile_directory is None
 
 
 def test_settings_reject_inverted_experience_range() -> None:

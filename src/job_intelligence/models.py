@@ -138,6 +138,7 @@ class Education(Model):
 
 
 class CandidatePreferences(Model):
+    preferred_work_modes: list[WorkMode] = Field(default_factory=list)
     preferred_employment_types: list[EmploymentType] = Field(default_factory=list)
     preferred_domains: list[NonEmptyText] = Field(default_factory=list)
 
