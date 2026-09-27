@@ -1,6 +1,6 @@
 # Job Intelligence
 
-Milestones 1 and 2 contain the repository foundation, typed Pydantic domain models, local candidate-profile management, PDF resume text ingestion, and environment-backed configuration for the Job Intelligence product.
+Milestones 1–4 contain the repository foundation, typed Pydantic domain models, local candidate-profile management, PDF resume text ingestion, career-site connectors, job normalization, change detection, and local development storage for the Job Intelligence product.
 
 ## Local setup
 
@@ -83,6 +83,23 @@ if listing.jobs:
 ```
 
 The connector returns typed `JobReference`, `RawJobDetails`, and status-bearing results. Tests use mocked HTTP transports and do not require internet access.
+
+Normalized job ingestion uses the connector's `RawJobDetails` output and keeps volatile observation timestamps out of the content hash:
+
+```python
+from job_intelligence.ingestion import JobIngestionService
+from job_intelligence.job_repository import JsonJobRepository
+from job_intelligence.snapshots import FileRawSnapshotStore
+
+service = JobIngestionService(
+    JsonJobRepository("data/jobs"),
+    FileRawSnapshotStore("data/job-snapshots"),
+)
+result = service.ingest(details.job)
+print(result.classification, result.job.content_hash)
+```
+
+The first observation is `NEW`, a repeated observation with the same normalized content is `UNCHANGED`, and a meaningful content change is `CHANGED` with a new immutable `JobVersion`. No filtering, matching, ranking, or AI processing is performed.
 
 ## Checks
 

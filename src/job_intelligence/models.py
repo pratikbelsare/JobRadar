@@ -182,7 +182,7 @@ class Job(Model):
     source_job_id: NonEmptyText
     company_id: UUID
     title: NonEmptyText
-    location: NonEmptyText
+    location: NonEmptyText | None = None
     work_mode: WorkMode = WorkMode.UNKNOWN
     description: NonEmptyText
     min_experience_years: NonNegativeFloat | None = None
@@ -222,6 +222,7 @@ class JobVersion(Model):
     description: NonEmptyText
     captured_at: datetime = Field(default_factory=datetime.utcnow)
     is_current: bool = True
+    job_snapshot: Job | None = None
 
 
 class JobAnalysis(Model):
