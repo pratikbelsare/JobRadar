@@ -10,6 +10,16 @@ from .change_detection import (
     StoredJobState,
 )
 from .deduplication import ExactDuplicateDetector
+from .filtering import (
+    DeterministicJobFilter,
+    ExperienceFilterConfig,
+    FilterOutcome,
+    FilterResult,
+    FilterRule,
+    FilterRuleResult,
+    FilteringConfig,
+    RuleStatus,
+)
 from .ingestion import JobIngestionService
 from .job_repository import JobRepository, JsonJobRepository, JobRepositoryError
 from .models import (
@@ -60,6 +70,13 @@ __all__ = [
     "CandidateProfileService",
     "Company",
     "ExactDuplicateDetector",
+    "DeterministicJobFilter",
+    "ExperienceFilterConfig",
+    "FilterOutcome",
+    "FilterResult",
+    "FilterRule",
+    "FilterRuleResult",
+    "FilteringConfig",
     "FileRawSnapshotStore",
     "JobChangeDetector",
     "JobChangeResult",
@@ -85,6 +102,7 @@ __all__ = [
     "ResumeIngestionError",
     "ResumeIngestor",
     "ResumeMetadata",
+    "RuleStatus",
     "ScanRun",
     "Settings",
     "SnapshotNotFoundError",

@@ -1,6 +1,6 @@
 # Job Intelligence
 
-Milestones 1–4 contain the repository foundation, typed Pydantic domain models, local candidate-profile management, PDF resume text ingestion, career-site connectors, job normalization, change detection, and local development storage for the Job Intelligence product.
+Milestones 1–5 contain the repository foundation, typed Pydantic domain models, local candidate-profile management, PDF resume text ingestion, career-site connectors, job normalization, change detection, local development storage, and deterministic job filtering for the Job Intelligence product.
 
 ## Local setup
 
@@ -27,6 +27,8 @@ Configuration is loaded explicitly with `Settings.from_environment()`. Supported
 - `JOB_INTELLIGENCE_HTTP_TIMEOUT_SECONDS`
 - `JOB_INTELLIGENCE_HTTP_USER_AGENT`
 - `JOB_INTELLIGENCE_HTTP_MAX_RETRIES`
+- `JOB_INTELLIGENCE_FILTER_ACCEPTABLE_EXPERIENCE_GAP_YEARS`
+- `JOB_INTELLIGENCE_FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS`
 
 Resume ingestion is intentionally limited to local PDF validation and text extraction. It does not infer profile fields or call an LLM. Profile JSON files are stored under the configured profile directory; the directory is created when a profile is saved.
 
@@ -99,7 +101,23 @@ result = service.ingest(details.job)
 print(result.classification, result.job.content_hash)
 ```
 
-The first observation is `NEW`, a repeated observation with the same normalized content is `UNCHANGED`, and a meaningful content change is `CHANGED` with a new immutable `JobVersion`. No filtering, matching, ranking, or AI processing is performed.
+The first observation is `NEW`, a repeated observation with the same normalized content is `UNCHANGED`, and a meaningful content change is `CHANGED` with a new immutable `JobVersion`. No matching, ranking, or AI processing is performed.
+
+Deterministic filtering is configured separately from the filter implementation. Role and location aliases are supplied by the application, while experience thresholds can come from `Settings`:
+
+```python
+from job_intelligence.filtering import DeterministicJobFilter, FilteringConfig
+
+filter_config = FilteringConfig.from_settings(
+    settings,
+    role_aliases={"software engineer": ["swe"]},
+    location_aliases={"bengaluru": ["bangalore"]},
+)
+result = DeterministicJobFilter(filter_config).evaluate(job, profile)
+print(result.passed, result.outcome, result.reasons)
+```
+
+Filtering runs role → location → experience → constraints and stops on the first hard rejection. It performs no semantic or AI analysis.
 
 ## Checks
 

@@ -146,7 +146,9 @@ class CandidatePreferences(Model):
 class HardConstraints(Model):
     excluded_locations: list[NonEmptyText] = Field(default_factory=list)
     excluded_employment_types: list[EmploymentType] = Field(default_factory=list)
+    excluded_terms: list[NonEmptyText] = Field(default_factory=list)
     work_authorization_required: bool | None = None
+    remote_only: bool = False
 
 
 class Company(Model):

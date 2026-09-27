@@ -22,6 +22,8 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
             "JOB_INTELLIGENCE_HTTP_TIMEOUT_SECONDS": "15",
             "JOB_INTELLIGENCE_HTTP_USER_AGENT": "job-intelligence-test/1.0",
             "JOB_INTELLIGENCE_HTTP_MAX_RETRIES": "2",
+            "JOB_INTELLIGENCE_FILTER_ACCEPTABLE_EXPERIENCE_GAP_YEARS": "0.5",
+            "JOB_INTELLIGENCE_FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS": "1.5",
         }
     )
 
@@ -38,6 +40,8 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
     assert settings.http_timeout_seconds == 15
     assert settings.http_user_agent == "job-intelligence-test/1.0"
     assert settings.http_max_retries == 2
+    assert settings.filter_acceptable_experience_gap_years == 0.5
+    assert settings.filter_max_stretch_experience_gap_years == 1.5
 
 
 def test_settings_have_no_user_or_provider_specific_defaults() -> None:
@@ -51,6 +55,8 @@ def test_settings_have_no_user_or_provider_specific_defaults() -> None:
     assert settings.candidate_profile_directory is None
     assert settings.http_timeout_seconds is None
     assert settings.http_user_agent is None
+    assert settings.filter_acceptable_experience_gap_years is None
+    assert settings.filter_max_stretch_experience_gap_years is None
 
 
 def test_settings_reject_inverted_experience_range() -> None:

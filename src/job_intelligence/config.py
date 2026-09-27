@@ -42,6 +42,8 @@ class Settings(BaseModel):
     http_timeout_seconds: PositiveFloat | None = None
     http_user_agent: NonEmptyText | None = None
     http_max_retries: NonNegativeInt | None = None
+    filter_acceptable_experience_gap_years: NonNegativeFloat | None = None
+    filter_max_stretch_experience_gap_years: NonNegativeFloat | None = None
 
     @model_validator(mode="after")
     def validate_experience_range(self) -> Settings:
@@ -81,6 +83,14 @@ class Settings(BaseModel):
             http_timeout_seconds=_read_float(values, prefix + "HTTP_TIMEOUT_SECONDS"),
             http_user_agent=_read_optional(values, prefix + "HTTP_USER_AGENT"),
             http_max_retries=_read_int(values, prefix + "HTTP_MAX_RETRIES"),
+            filter_acceptable_experience_gap_years=_read_float(
+                values,
+                prefix + "FILTER_ACCEPTABLE_EXPERIENCE_GAP_YEARS",
+            ),
+            filter_max_stretch_experience_gap_years=_read_float(
+                values,
+                prefix + "FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS",
+            ),
         )
 
 
