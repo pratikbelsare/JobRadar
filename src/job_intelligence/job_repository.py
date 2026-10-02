@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import tempfile
 from pathlib import Path
-from typing import Protocol
+from typing import List, Protocol
+from uuid import UUID
 
 from pydantic import ValidationError
 
@@ -22,6 +23,12 @@ class JobRepository(Protocol):
 
     def find_by_identity(self, identity: JobIdentity) -> StoredJobState | None:
         """Return the current state matching a stable job identity."""
+
+    def find_by_id(self, job_id: UUID) -> StoredJobState | None:
+        """Return current state by canonical job identifier."""
+
+    def list(self) -> List[StoredJobState]:
+        """Return all current job states."""
 
     def save(self, state: StoredJobState) -> StoredJobState:
         """Save current state and append any new immutable versions."""
@@ -47,6 +54,28 @@ class JsonJobRepository:
             raise JobRepositoryError("Could not inspect local job state") from exc
         return None
 
+    def find_by_id(self, job_id: object) -> StoredJobState | None:
+        path = self._jobs_directory / f"{job_id}.json"
+        if not path.exists():
+            return None
+        try:
+            job = Job.model_validate_json(path.read_text(encoding="utf-8"))
+            return StoredJobState(job=job, versions=self._load_versions(job))
+        except (OSError, ValidationError, ValueError) as exc:
+            raise JobRepositoryError(f"Could not load job {job_id}") from exc
+
+    def list(self) -> list[StoredJobState]:
+        if not self._jobs_directory.exists():
+            return []
+        try:
+            states = []
+            for path in sorted(self._jobs_directory.glob("*.json")):
+                job = Job.model_validate_json(path.read_text(encoding="utf-8"))
+                states.append(StoredJobState(job=job, versions=self._load_versions(job)))
+            return states
+        except (OSError, ValidationError, ValueError) as exc:
+            raise JobRepositoryError("Could not list local job state") from exc
+
     def save(self, state: StoredJobState) -> StoredJobState:
         try:
             self._jobs_directory.mkdir(parents=True, exist_ok=True)
@@ -63,11 +92,11 @@ class JsonJobRepository:
             raise JobRepositoryError(f"Could not save job {state.job.id}") from exc
         return state
 
-    def _load_versions(self, job: Job) -> list[JobVersion]:
+    def _load_versions(self, job: Job) -> List[JobVersion]:
         directory = self._versions_directory / str(job.id)
         if not directory.exists():
             return []
-        versions: list[JobVersion] = []
+        versions: List[JobVersion] = []
         for path in directory.glob("*.json"):
             versions.append(JobVersion.model_validate_json(path.read_text(encoding="utf-8")))
         return sorted(versions, key=lambda version: version.version_number)

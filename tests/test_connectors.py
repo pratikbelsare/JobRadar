@@ -6,8 +6,8 @@ from uuid import uuid4
 import pytest
 
 from job_intelligence.connectors import (
-    ConnectorStatus,
     ConnectorRegistry,
+    ConnectorStatus,
     GreenhouseConnector,
     JobSourceConnector,
     UnsupportedConnectorError,

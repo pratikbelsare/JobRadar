@@ -14,6 +14,7 @@ htmlcov/
 
 build/
 dist/
+.aws-sam/
 
 # Local and generated data
 data/raw/
@@ -21,6 +22,7 @@ data/processed/
 data/jobs/
 data/job-snapshots/
 evaluation/results/
+evaluation/profile/
 
 # Editor and operating-system files
 .idea/

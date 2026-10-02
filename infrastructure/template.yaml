@@ -1,0 +1,401 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: JobRadar event-driven ingestion and analysis pipeline.
+
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: dev
+    AllowedPattern: '^[a-zA-Z0-9-]+$'
+  RawBucketName:
+    Type: String
+    Default: ''
+  DynamoTableName:
+    Type: String
+    Default: ''
+  ScheduleExpression:
+    Type: String
+    Default: rate(7 days)
+  ScheduleState:
+    Type: String
+    Default: DISABLED
+    AllowedValues:
+      - ENABLED
+      - DISABLED
+  CompanyBatchSize:
+    Type: Number
+    Default: 10
+    MinValue: 1
+  JobAnalysisModelId:
+    Type: String
+    Default: apac.amazon.nova-lite-v1:0
+  JobAnalysisFoundationModelId:
+    Type: String
+    Default: amazon.nova-lite-v1:0
+  EmbeddingModelId:
+    Type: String
+    Default: REPLACE_WITH_EMBEDDING_MODEL_ID
+  CandidateProfileId:
+    Type: String
+    Default: ''
+  CandidateProfileKey:
+    Type: String
+    Default: pratik
+  AcceptableExperienceGapYears:
+    Type: Number
+    Default: 1
+    MinValue: 0
+  MaxStretchExperienceGapYears:
+    Type: Number
+    Default: 3
+    MinValue: 0
+  HttpTimeoutSeconds:
+    Type: Number
+    Default: 20
+    MinValue: 1
+  HttpUserAgent:
+    Type: String
+    Default: JobRadarScanner/0.1
+  ScannerTimeoutSeconds:
+    Type: Number
+    Default: 300
+    MinValue: 1
+  AnalysisTimeoutSeconds:
+    Type: Number
+    Default: 300
+    MinValue: 1
+  CoordinatorMemorySize:
+    Type: Number
+    Default: 256
+  WorkerMemorySize:
+    Type: Number
+    Default: 512
+
+Globals:
+  Function:
+    Runtime: python3.11
+    Architectures:
+      - x86_64
+    CodeUri: ../src
+    Environment:
+      Variables:
+        JOB_INTELLIGENCE_AWS_REGION: !Ref AWS::Region
+        JOB_INTELLIGENCE_DYNAMODB_TABLE_NAME: !Ref JobRadarDataTable
+        JOB_INTELLIGENCE_S3_BUCKET_NAME: !Ref JobRadarRawBucket
+        JOB_INTELLIGENCE_S3_RAW_PREFIX: raw
+        JOB_INTELLIGENCE_COMPANY_SCAN_QUEUE_URL: !Ref CompanyScanQueue
+        JOB_INTELLIGENCE_JOB_ANALYSIS_QUEUE_URL: !Ref JobAnalysisQueue
+        JOB_INTELLIGENCE_COMPANY_BATCH_SIZE: !Ref CompanyBatchSize
+        JOB_INTELLIGENCE_JOB_ANALYSIS_MODEL_ID: !Ref JobAnalysisModelId
+        JOB_INTELLIGENCE_EMBEDDING_MODEL_ID: !Ref EmbeddingModelId
+        JOB_INTELLIGENCE_CANDIDATE_PROFILE_ID: !Ref CandidateProfileId
+        JOB_INTELLIGENCE_CANDIDATE_PROFILE_KEY: !Ref CandidateProfileKey
+        JOB_INTELLIGENCE_HTTP_TIMEOUT_SECONDS: !Ref HttpTimeoutSeconds
+        JOB_INTELLIGENCE_HTTP_USER_AGENT: !Ref HttpUserAgent
+        JOB_INTELLIGENCE_HTTP_MAX_RETRIES: '1'
+        JOB_INTELLIGENCE_FILTER_ACCEPTABLE_EXPERIENCE_GAP_YEARS: !Ref AcceptableExperienceGapYears
+        JOB_INTELLIGENCE_FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS: !Ref MaxStretchExperienceGapYears
+        JOB_INTELLIGENCE_AI_MAX_ATTEMPTS: '2'
+    Tags:
+      Project: JobRadar
+      Environment: !Ref EnvironmentName
+
+Resources:
+  JobRadarRawBucket:
+    Type: AWS::S3::Bucket
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !If [HasRawBucketName, !Ref RawBucketName, !Ref AWS::NoValue]
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireNoncurrentRawVersions
+            Status: Enabled
+            NoncurrentVersionExpiration:
+              NoncurrentDays: 30
+
+  JobRadarDataTable:
+    Type: AWS::DynamoDB::Table
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Properties:
+      TableName: !If [HasDynamoTableName, !Ref DynamoTableName, !Ref AWS::NoValue]
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+        - AttributeName: SK
+          AttributeType: S
+        - AttributeName: GSI1PK
+          AttributeType: S
+        - AttributeName: GSI1SK
+          AttributeType: S
+        - AttributeName: GSI2PK
+          AttributeType: S
+        - AttributeName: GSI2SK
+          AttributeType: S
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+        - AttributeName: SK
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: GSI1
+          KeySchema:
+            - AttributeName: GSI1PK
+              KeyType: HASH
+            - AttributeName: GSI1SK
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: GSI2
+          KeySchema:
+            - AttributeName: GSI2PK
+              KeyType: HASH
+            - AttributeName: GSI2SK
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      Tags:
+        - Key: Project
+          Value: JobRadar
+        - Key: Environment
+          Value: !Ref EnvironmentName
+
+  CompanyScanDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1209600
+
+  CompanyScanQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 360
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt CompanyScanDLQ.Arn
+        maxReceiveCount: 4
+
+  JobAnalysisDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1209600
+
+  JobAnalysisQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 360
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt JobAnalysisDLQ.Arn
+        maxReceiveCount: 4
+
+  CoordinatorRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: CoordinatorDataAndQueueAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:GetItem
+                  - dynamodb:PutItem
+                  - dynamodb:Query
+                Resource:
+                  - !GetAtt JobRadarDataTable.Arn
+                  - !Sub '${JobRadarDataTable.Arn}/index/*'
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt CompanyScanQueue.Arn
+
+  ScannerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: ScannerDataSnapshotAndQueueAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:GetItem
+                  - dynamodb:PutItem
+                  - dynamodb:Query
+                Resource:
+                  - !GetAtt JobRadarDataTable.Arn
+                  - !Sub '${JobRadarDataTable.Arn}/index/*'
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                Resource: !Sub '${JobRadarRawBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - sqs:ReceiveMessage
+                  - sqs:DeleteMessage
+                  - sqs:GetQueueAttributes
+                Resource: !GetAtt CompanyScanQueue.Arn
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt JobAnalysisQueue.Arn
+
+  AnalysisRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: AnalysisDataQueueAndBedrockAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:GetItem
+                  - dynamodb:PutItem
+                  - dynamodb:Query
+                Resource:
+                  - !GetAtt JobRadarDataTable.Arn
+                  - !Sub '${JobRadarDataTable.Arn}/index/*'
+              - Effect: Allow
+                Action:
+                  - sqs:ReceiveMessage
+                  - sqs:DeleteMessage
+                  - sqs:GetQueueAttributes
+                Resource: !GetAtt JobAnalysisQueue.Arn
+              - Effect: Allow
+                Action: bedrock:InvokeModel
+                Resource:
+                  - !Sub 'arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${JobAnalysisModelId}'
+                  - !Sub 'arn:${AWS::Partition}:bedrock:*::foundation-model/${JobAnalysisFoundationModelId}'
+                  - !Sub 'arn:${AWS::Partition}:bedrock:${AWS::Region}::foundation-model/${EmbeddingModelId}'
+              - Effect: Allow
+                Action: bedrock:GetInferenceProfile
+                Resource: !Sub 'arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${JobAnalysisModelId}'
+
+  SchedulerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: scheduler.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: InvokeCoordinator
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: lambda:InvokeFunction
+                Resource: !GetAtt CoordinatorFunction.Arn
+
+  CoordinatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub jobradar-${EnvironmentName}-coordinator
+      Handler: job_intelligence.aws.handlers.coordinator_handler
+      Role: !GetAtt CoordinatorRole.Arn
+      MemorySize: !Ref CoordinatorMemorySize
+      Timeout: 60
+
+  ScannerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub jobradar-${EnvironmentName}-scanner
+      Handler: job_intelligence.aws.handlers.scanner_handler
+      Role: !GetAtt ScannerRole.Arn
+      MemorySize: !Ref WorkerMemorySize
+      Timeout: !Ref ScannerTimeoutSeconds
+      Events:
+        CompanyScanEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt CompanyScanQueue.Arn
+            BatchSize: 1
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+
+  AnalysisFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub jobradar-${EnvironmentName}-analysis
+      Handler: job_intelligence.aws.handlers.analysis_handler
+      Role: !GetAtt AnalysisRole.Arn
+      MemorySize: !Ref WorkerMemorySize
+      Timeout: !Ref AnalysisTimeoutSeconds
+      Events:
+        JobAnalysisEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt JobAnalysisQueue.Arn
+            BatchSize: 1
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+
+  CoordinatorSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      Name: !Sub jobradar-${EnvironmentName}-schedule
+      FlexibleTimeWindow:
+        Mode: "OFF"
+      ScheduleExpression: !Ref ScheduleExpression
+      State: !Ref ScheduleState
+      Target:
+        Arn: !GetAtt CoordinatorFunction.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{}'
+
+Outputs:
+  RawBucketName:
+    Value: !Ref JobRadarRawBucket
+  DataTableName:
+    Value: !Ref JobRadarDataTable
+  CompanyScanQueueUrl:
+    Value: !Ref CompanyScanQueue
+  JobAnalysisQueueUrl:
+    Value: !Ref JobAnalysisQueue
+
+Conditions:
+  HasRawBucketName: !Not [!Equals [!Ref RawBucketName, '']]
+  HasDynamoTableName: !Not [!Equals [!Ref DynamoTableName, '']]

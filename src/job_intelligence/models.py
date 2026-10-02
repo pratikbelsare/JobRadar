@@ -165,6 +165,7 @@ class Company(Model):
 
 class CandidateProfile(Model):
     id: UUID = Field(default_factory=uuid4)
+    profile_key: NonEmptyText | None = None
     target_roles: list[NonEmptyText] = Field(default_factory=list)
     experience_years: NonNegativeFloat = 0
     preferred_locations: list[NonEmptyText] = Field(default_factory=list)
@@ -239,9 +240,15 @@ class JobAnalysis(Model):
     max_experience_years: NonNegativeFloat | None = None
     seniority: Seniority = Seniority.UNKNOWN
     location_constraints: list[NonEmptyText] = Field(default_factory=list)
+    work_modes: list[WorkMode] = Field(default_factory=list)
+    employment_type: EmploymentType = EmploymentType.UNKNOWN
     responsibilities: list[NonEmptyText] = Field(default_factory=list)
     education: list[NonEmptyText] = Field(default_factory=list)
     domain: NonEmptyText | None = None
+    provider: NonEmptyText = "bedrock"
+    status: NonEmptyText = "succeeded"
+    error: NonEmptyText | None = None
+    usage: dict[str, NonNegativeInt] = Field(default_factory=dict)
     analyzed_at: datetime = Field(default_factory=datetime.utcnow)
 
     @model_validator(mode="after")
@@ -268,6 +275,7 @@ class JobMatch(Model):
     preference_match: Score
     final_score: Score
     ranking_version: NonEmptyText
+    evidence: dict[str, object] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
 
@@ -290,6 +298,7 @@ class ScanRun(Model):
     companies_succeeded: NonNegativeInt = 0
     companies_failed: NonNegativeInt = 0
     jobs_discovered: NonNegativeInt = 0
+    processed_company_ids: list[UUID] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def validate_run(self) -> ScanRun:

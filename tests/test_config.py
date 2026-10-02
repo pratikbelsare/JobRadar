@@ -24,6 +24,12 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
             "JOB_INTELLIGENCE_HTTP_MAX_RETRIES": "2",
             "JOB_INTELLIGENCE_FILTER_ACCEPTABLE_EXPERIENCE_GAP_YEARS": "0.5",
             "JOB_INTELLIGENCE_FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS": "1.5",
+            "JOB_INTELLIGENCE_BEDROCK_TIMEOUT_SECONDS": "30",
+            "JOB_INTELLIGENCE_AI_MAX_ATTEMPTS": "2",
+            "JOB_INTELLIGENCE_MATCHING_ROLE_WEIGHT": "0.25",
+            "JOB_INTELLIGENCE_MATCHING_EXPERIENCE_GAP_SCALE_YEARS": "2.5",
+            "JOB_INTELLIGENCE_MATCHING_REQUIRED_SKILL_WEIGHT": "0.7",
+            "JOB_INTELLIGENCE_MATCHING_PREFERRED_SKILL_WEIGHT": "0.3",
         }
     )
 
@@ -42,6 +48,12 @@ def test_settings_load_configurable_values_from_environment_mapping() -> None:
     assert settings.http_max_retries == 2
     assert settings.filter_acceptable_experience_gap_years == 0.5
     assert settings.filter_max_stretch_experience_gap_years == 1.5
+    assert settings.bedrock_timeout_seconds == 30
+    assert settings.ai_max_attempts == 2
+    assert settings.matching_role_weight == 0.25
+    assert settings.matching_experience_gap_scale_years == 2.5
+    assert settings.matching_required_skill_weight == 0.7
+    assert settings.matching_preferred_skill_weight == 0.3
 
 
 def test_settings_have_no_user_or_provider_specific_defaults() -> None:
@@ -57,6 +69,12 @@ def test_settings_have_no_user_or_provider_specific_defaults() -> None:
     assert settings.http_user_agent is None
     assert settings.filter_acceptable_experience_gap_years is None
     assert settings.filter_max_stretch_experience_gap_years is None
+    assert settings.bedrock_timeout_seconds is None
+    assert settings.ai_max_attempts is None
+    assert settings.matching_role_weight is None
+    assert settings.matching_experience_gap_scale_years is None
+    assert settings.matching_required_skill_weight is None
+    assert settings.matching_preferred_skill_weight is None
 
 
 def test_settings_reject_inverted_experience_range() -> None:

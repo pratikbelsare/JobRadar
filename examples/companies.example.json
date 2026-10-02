@@ -1,0 +1,13 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "name": "YipitData",
+    "career_url": "https://job-boards.greenhouse.io/yipitdatajobs",
+    "connector_type": "greenhouse",
+    "connector_config": {},
+    "enabled": true,
+    "last_checked_at": null,
+    "last_success_at": null,
+    "failure_count": 0
+  }
+]

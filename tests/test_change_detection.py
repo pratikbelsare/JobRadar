@@ -9,7 +9,6 @@ from job_intelligence.change_detection import (
     StoredJobState,
 )
 from job_intelligence.connectors.base import RawJobDetails
-from job_intelligence.models import JobVersion
 from job_intelligence.normalization import JobNormalizer
 
 

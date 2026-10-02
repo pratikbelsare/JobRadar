@@ -25,6 +25,12 @@ class CandidateProfileRepository(Protocol):
     def load(self, profile_id: UUID) -> CandidateProfile | None:
         """Load a profile, returning ``None`` when it does not exist."""
 
+    def find_by_key(self, profile_key: str) -> CandidateProfile | None:
+        """Load a profile by its stable deployment/bootstrap key."""
+
+    def list(self) -> list[CandidateProfile]:
+        """Return all profiles."""
+
 
 class JsonCandidateProfileRepository:
     """Store one JSON document per candidate profile in a local directory."""
@@ -61,6 +67,23 @@ class JsonCandidateProfileRepository:
             return CandidateProfile.model_validate_json(path.read_text(encoding="utf-8"))
         except (OSError, ValidationError, ValueError) as exc:
             raise ProfileRepositoryError(f"Could not load profile {profile_id}") from exc
+
+    def list(self) -> list[CandidateProfile]:
+        if not self._directory.exists():
+            return []
+        try:
+            return [
+                CandidateProfile.model_validate_json(path.read_text(encoding="utf-8"))
+                for path in sorted(self._directory.glob("*.json"))
+            ]
+        except (OSError, ValidationError, ValueError) as exc:
+            raise ProfileRepositoryError("Could not list profiles") from exc
+
+    def find_by_key(self, profile_key: str) -> CandidateProfile | None:
+        return next(
+            (profile for profile in self.list() if profile.profile_key == profile_key),
+            None,
+        )
 
     def _profile_path(self, profile_id: UUID) -> Path:
         return self._directory / f"{profile_id}.json"

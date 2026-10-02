@@ -2,26 +2,57 @@
 
 __version__ = "0.1.0"
 
-from .config import Settings
 from .change_detection import (
     JobChangeDetector,
     JobChangeResult,
     JobChangeType,
     StoredJobState,
 )
+from .config import Settings
 from .deduplication import ExactDuplicateDetector
+from .evaluation import (
+    EmbeddingBaseline,
+    EvaluationCase,
+    EvaluationExample,
+    EvaluationReport,
+    HybridRankingBaseline,
+    JsonlEvaluationDataset,
+    KeywordBaseline,
+    evaluate_approaches,
+    ndcg_at_k,
+    precision_at_k,
+)
+from .explanations import (
+    ExplanationGenerationError,
+    ExplanationGroundingError,
+    ExplanationService,
+)
+from .feedback import (
+    FeedbackAlreadyExistsError,
+    FeedbackNotFoundError,
+    FeedbackRepositoryError,
+    JsonUserFeedbackRepository,
+    UserFeedbackService,
+)
 from .filtering import (
     DeterministicJobFilter,
     ExperienceFilterConfig,
+    FilteringConfig,
     FilterOutcome,
     FilterResult,
     FilterRule,
     FilterRuleResult,
-    FilteringConfig,
     RuleStatus,
 )
 from .ingestion import JobIngestionService
-from .job_repository import JobRepository, JsonJobRepository, JobRepositoryError
+from .job_repository import JobRepository, JobRepositoryError, JsonJobRepository
+from .matching import (
+    HybridJobMatcher,
+    MatchComponent,
+    MatchingConfig,
+    MatchingWeights,
+    RejectedJobError,
+)
 from .models import (
     CandidateProfile,
     Company,
@@ -70,14 +101,24 @@ __all__ = [
     "CandidateProfileService",
     "Company",
     "ExactDuplicateDetector",
+    "EmbeddingBaseline",
     "DeterministicJobFilter",
     "ExperienceFilterConfig",
+    "EvaluationCase",
+    "EvaluationExample",
+    "EvaluationReport",
+    "ExplanationGenerationError",
+    "ExplanationGroundingError",
+    "ExplanationService",
     "FilterOutcome",
     "FilterResult",
     "FilterRule",
     "FilterRuleResult",
     "FilteringConfig",
     "FileRawSnapshotStore",
+    "FeedbackAlreadyExistsError",
+    "FeedbackNotFoundError",
+    "FeedbackRepositoryError",
     "JobChangeDetector",
     "JobChangeResult",
     "JobChangeType",
@@ -90,6 +131,14 @@ __all__ = [
     "JobAnalysis",
     "JobMatch",
     "JobVersion",
+    "HybridJobMatcher",
+    "HybridRankingBaseline",
+    "JsonlEvaluationDataset",
+    "JsonUserFeedbackRepository",
+    "KeywordBaseline",
+    "MatchComponent",
+    "MatchingConfig",
+    "MatchingWeights",
     "JsonJobRepository",
     "JsonCandidateProfileRepository",
     "PdfTextExtractor",
@@ -98,6 +147,7 @@ __all__ = [
     "ProfileRepositoryError",
     "RawSnapshotMetadata",
     "RawSnapshotStore",
+    "RejectedJobError",
     "ResumeDocument",
     "ResumeIngestionError",
     "ResumeIngestor",
@@ -109,6 +159,10 @@ __all__ = [
     "SnapshotStoreError",
     "StoredJobState",
     "UserFeedback",
+    "UserFeedbackService",
+    "evaluate_approaches",
+    "ndcg_at_k",
+    "precision_at_k",
     "canonicalize_url",
     "compute_content_hash",
     "job_identity",

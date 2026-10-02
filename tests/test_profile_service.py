@@ -3,7 +3,7 @@ from uuid import uuid4
 import pytest
 from pydantic import ValidationError
 
-from job_intelligence.models import CandidateProfile, CandidatePreferences, WorkMode
+from job_intelligence.models import CandidatePreferences, CandidateProfile, WorkMode
 from job_intelligence.profile_repository import (
     JsonCandidateProfileRepository,
     ProfileRepositoryError,

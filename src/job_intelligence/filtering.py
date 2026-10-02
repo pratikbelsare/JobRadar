@@ -9,7 +9,7 @@ from typing import Any
 from pydantic import Field, NonNegativeFloat, model_validator
 
 from .config import Settings
-from .models import CandidateProfile, EmploymentType, Job, Model, WorkMode
+from .models import CandidateProfile, Job, Model, WorkMode
 from .normalization import normalize_text
 
 

@@ -6,9 +6,9 @@ from job_intelligence.config import Settings
 from job_intelligence.filtering import (
     DeterministicJobFilter,
     ExperienceFilterConfig,
+    FilteringConfig,
     FilterOutcome,
     FilterRule,
-    FilteringConfig,
     RuleStatus,
 )
 from job_intelligence.models import (

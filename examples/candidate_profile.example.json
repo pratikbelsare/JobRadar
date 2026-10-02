@@ -1,0 +1,58 @@
+{
+  "profile_key": "pratik",
+  "target_roles": [
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Data Scientist"
+  ],
+  "experience_years": 1.2,
+  "preferred_locations": [
+    "Pune",
+    "Bengaluru",
+    "Hyderabad",
+    "Gurugram",
+    "Remote"
+  ],
+  "work_mode": null,
+  "skills": [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "XGBoost",
+    "LightGBM",
+    "CatBoost",
+    "Random Forest",
+    "ARIMA",
+    "SARIMA",
+    "N-BEATS",
+    "PuLP",
+    "AWS",
+    "Azure OpenAI",
+    "Semantic Kernel",
+    "Cosmos DB",
+    "RAG",
+    "Streamlit"
+  ],
+  "skill_evidence": {},
+  "work_experience": [],
+  "projects": [],
+  "education": [],
+  "domains": [
+    "Machine Learning",
+    "Forecasting",
+    "Optimization",
+    "Generative AI"
+  ],
+  "preferences": {
+    "preferred_work_modes": [],
+    "preferred_employment_types": [],
+    "preferred_domains": []
+  },
+  "hard_constraints": {
+    "excluded_locations": [],
+    "excluded_employment_types": [],
+    "excluded_terms": [],
+    "work_authorization_required": null,
+    "remote_only": false
+  }
+}

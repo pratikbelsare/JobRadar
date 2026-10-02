@@ -9,7 +9,6 @@ from ..models import Company, ConnectorType
 from .base import JobSourceConnector, UnsupportedConnectorError
 from .greenhouse import GreenhouseConnector
 
-
 ConnectorFactory = Callable[[HttpClient], JobSourceConnector]
 
 

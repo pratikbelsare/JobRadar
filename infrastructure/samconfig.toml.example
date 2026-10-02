@@ -1,0 +1,25 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "jobradar-dev"
+resolve_s3 = true
+capabilities = "CAPABILITY_IAM"
+confirm_changeset = true
+region = "ap-south-1"
+parameter_overrides = [
+  "EnvironmentName=dev",
+  "ScheduleExpression=rate(7 days)",
+  "ScheduleState=DISABLED",
+  "CompanyBatchSize=1",
+  "JobAnalysisModelId=apac.amazon.nova-lite-v1:0",
+  "JobAnalysisFoundationModelId=amazon.nova-lite-v1:0",
+  "EmbeddingModelId=amazon.titan-embed-text-v2:0",
+  "CandidateProfileKey=pratik",
+  "AcceptableExperienceGapYears=1",
+  "MaxStretchExperienceGapYears=2",
+  "HttpTimeoutSeconds=20",
+  "ScannerTimeoutSeconds=300",
+  "AnalysisTimeoutSeconds=300",
+  "CoordinatorMemorySize=256",
+  "WorkerMemorySize=512",
+]

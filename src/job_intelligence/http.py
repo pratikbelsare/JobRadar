@@ -5,10 +5,10 @@ from __future__ import annotations
 import socket
 import time
 from collections.abc import Mapping
+from typing import Protocol
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from typing import Protocol
 
 from pydantic import BaseModel, ConfigDict, Field, PositiveInt
 

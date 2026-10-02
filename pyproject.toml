@@ -9,15 +9,25 @@ description = "Core models and configuration for a personal job intelligence pla
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "boto3>=1.34,<2",
+    "fastapi>=0.115,<1",
     "pydantic>=2.6,<3",
     "pypdf>=4.0,<6",
+    "uvicorn[standard]>=0.30,<1",
 ]
 
 [project.optional-dependencies]
 dev = [
+    "httpx>=0.27,<1",
     "mypy>=1.11",
     "pytest>=8.0",
     "ruff>=0.6",
+]
+local-ai = [
+    "sentence-transformers>=3.0,<6",
+]
+ui = [
+    "streamlit>=1.39,<2",
 ]
 
 [tool.setuptools.packages.find]
