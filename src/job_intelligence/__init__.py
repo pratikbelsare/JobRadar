@@ -2,6 +2,7 @@
 
 __version__ = "0.1.0"
 
+from .assessment import JobAssessment, JobAssessmentService
 from .change_detection import (
     JobChangeDetector,
     JobChangeResult,
@@ -10,6 +11,14 @@ from .change_detection import (
 )
 from .config import Settings
 from .deduplication import ExactDuplicateDetector
+from .eligibility import (
+    EligibilityConfig,
+    EligibilityEvaluator,
+    EligibilityExperienceStatus,
+    EligibilityResult,
+    EligibilityStatus,
+    SeniorityStatus,
+)
 from .evaluation import (
     EmbeddingBaseline,
     EvaluationCase,
@@ -37,16 +46,20 @@ from .feedback import (
 from .filtering import (
     DeterministicJobFilter,
     ExperienceFilterConfig,
+    ExperienceFitStatus,
     FilteringConfig,
     FilterOutcome,
     FilterResult,
     FilterRule,
     FilterRuleResult,
     RuleStatus,
+    classify_experience_fit,
 )
 from .ingestion import JobIngestionService
 from .job_repository import JobRepository, JobRepositoryError, JsonJobRepository
 from .matching import (
+    RELEVANCE_COMPONENTS,
+    ComponentScore,
     HybridJobMatcher,
     MatchComponent,
     MatchingConfig,
@@ -56,10 +69,13 @@ from .matching import (
 from .models import (
     CandidateProfile,
     Company,
+    EligibilitySummary,
     Job,
     JobAnalysis,
     JobMatch,
     JobVersion,
+    RelevanceComponentEvidence,
+    RelevanceEvidence,
     ScanRun,
     UserFeedback,
 )
@@ -87,6 +103,16 @@ from .resume import (
     ResumeIngestor,
     ResumeMetadata,
 )
+from .role_policy import (
+    RoleFamily,
+    RoleFamilyClass,
+    RoleFamilyClassifier,
+    RoleFamilyMatch,
+    RoleFamilyPolicy,
+    RoleMatchType,
+    UnknownRoleAction,
+    default_ai_data_role_family_policy,
+)
 from .snapshots import (
     FileRawSnapshotStore,
     RawSnapshotMetadata,
@@ -96,14 +122,24 @@ from .snapshots import (
 )
 
 __all__ = [
+    "JobAssessment",
+    "JobAssessmentService",
     "CandidateProfile",
     "CandidateProfileRepository",
     "CandidateProfileService",
     "Company",
+    "ComponentScore",
+    "EligibilitySummary",
     "ExactDuplicateDetector",
     "EmbeddingBaseline",
+    "EligibilityConfig",
+    "EligibilityEvaluator",
+    "EligibilityExperienceStatus",
+    "EligibilityResult",
+    "EligibilityStatus",
     "DeterministicJobFilter",
     "ExperienceFilterConfig",
+    "ExperienceFitStatus",
     "EvaluationCase",
     "EvaluationExample",
     "EvaluationReport",
@@ -131,6 +167,8 @@ __all__ = [
     "JobAnalysis",
     "JobMatch",
     "JobVersion",
+    "RelevanceComponentEvidence",
+    "RelevanceEvidence",
     "HybridJobMatcher",
     "HybridRankingBaseline",
     "JsonlEvaluationDataset",
@@ -139,6 +177,7 @@ __all__ = [
     "MatchComponent",
     "MatchingConfig",
     "MatchingWeights",
+    "RELEVANCE_COMPONENTS",
     "JsonJobRepository",
     "JsonCandidateProfileRepository",
     "PdfTextExtractor",
@@ -153,11 +192,19 @@ __all__ = [
     "ResumeIngestor",
     "ResumeMetadata",
     "RuleStatus",
+    "RoleFamily",
+    "RoleFamilyClass",
+    "RoleFamilyClassifier",
+    "RoleFamilyMatch",
+    "RoleFamilyPolicy",
+    "RoleMatchType",
     "ScanRun",
+    "SeniorityStatus",
     "Settings",
     "SnapshotNotFoundError",
     "SnapshotStoreError",
     "StoredJobState",
+    "UnknownRoleAction",
     "UserFeedback",
     "UserFeedbackService",
     "evaluate_approaches",
@@ -166,4 +213,6 @@ __all__ = [
     "canonicalize_url",
     "compute_content_hash",
     "job_identity",
+    "classify_experience_fit",
+    "default_ai_data_role_family_policy",
 ]

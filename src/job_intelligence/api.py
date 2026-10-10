@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Literal
 from uuid import UUID
 
@@ -18,17 +17,14 @@ from .application_service import (
     JobRadarApplication,
     JobView,
 )
-from .company_repository import JsonCompanyRepository
 from .config import Settings
-from .explanation_repository import JsonExplanationRepository
 from .explanations import (
     ExplanationGenerationError,
     ExplanationGroundingError,
     ExplanationService,
 )
-from .feedback import JsonUserFeedbackRepository, UserFeedbackService
-from .job_repository import JsonJobRepository
-from .match_repository import JsonJobMatchRepository
+from .feedback import UserFeedbackService
+from .local_runtime import build_local_repositories
 from .models import (
     CandidateProfile,
     Company,
@@ -42,9 +38,7 @@ from .models import (
     Score,
     UserFeedback,
 )
-from .profile_repository import JsonCandidateProfileRepository
 from .profile_service import CandidateProfileService
-from .run_repository import JsonScanRunRepository
 
 
 class HealthResponse(Model):
@@ -186,22 +180,20 @@ def build_local_application(
     *,
     explanation_service: ExplanationService | None = None,
 ) -> JobRadarApplication:
-    data_directory = settings.application_data_directory or Path("data")
-    profile_directory = settings.candidate_profile_directory or data_directory / "profiles"
-    profile_repository = JsonCandidateProfileRepository(profile_directory)
-    profiles = CandidateProfileService(profile_repository)
+    repositories = build_local_repositories(settings)
+    profiles = CandidateProfileService(repositories.profiles)
     profile_id = settings.candidate_profile_id
     if profile_id is None:
-        existing = profile_repository.list()
+        existing = repositories.profiles.list()
         profile_id = existing[0].id if existing else profiles.create(CandidateProfile()).id
     return JobRadarApplication(
-        jobs=JsonJobRepository(data_directory / "jobs"),
+        jobs=repositories.jobs,
         profiles=profiles,
-        companies=JsonCompanyRepository(data_directory / "companies.json"),
-        runs=JsonScanRunRepository(data_directory / "runs.json"),
-        matches=JsonJobMatchRepository(data_directory / "matches.json"),
-        feedback=UserFeedbackService(JsonUserFeedbackRepository(data_directory / "feedback.json")),
-        explanations=JsonExplanationRepository(data_directory / "explanations.json"),
+        companies=repositories.companies,
+        runs=repositories.runs,
+        matches=repositories.matches,
+        feedback=UserFeedbackService(repositories.feedback),
+        explanations=repositories.explanations,
         profile_id=profile_id,
         explanation_service=explanation_service,
     )

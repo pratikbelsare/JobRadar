@@ -182,11 +182,23 @@ class BedrockMantleProvider:
         self,
         context: ExplanationContext,
     ) -> AIResult[JobMatchExplanation]:
+        def parse_grounded_explanation(payload: Any) -> JobMatchExplanation:
+            explanation = JobMatchExplanation.model_validate(payload)
+            # Lazy import avoids an import cycle while letting the provider's existing
+            # corrective retry loop handle strict grounding failures as validation errors.
+            from ..explanations import ExplanationGroundingError, validate_explanation_grounding
+
+            try:
+                validate_explanation_grounding(explanation, context)
+            except ExplanationGroundingError as exc:
+                raise AIValidationError(f"Explanation grounding failed: {exc}") from exc
+            return explanation
+
         return self._extract_json(
             system_prompt=EXPLANATION_SYSTEM_PROMPT,
             user_prompt=explanation_prompt(context),
             prompt_version=EXPLANATION_PROMPT_VERSION,
-            parser=JobMatchExplanation.model_validate,
+            parser=parse_grounded_explanation,
         )
 
     def embed_text(self, text: str) -> AIResult[EmbeddingVector]:
@@ -255,9 +267,9 @@ class BedrockMantleProvider:
 
 def _signed_request(url: str, payload: bytes, region: str) -> urllib.request.Request:
     try:
-        import boto3
-        from botocore.auth import SigV4Auth
-        from botocore.awsrequest import AWSRequest
+        import boto3  # type: ignore[import-untyped]
+        from botocore.auth import SigV4Auth  # type: ignore[import-untyped]
+        from botocore.awsrequest import AWSRequest  # type: ignore[import-untyped]
     except ImportError as exc:
         raise AIConfigurationError(
             "Bedrock Mantle integration requires boto3; install the project dependencies"

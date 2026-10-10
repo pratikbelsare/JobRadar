@@ -99,7 +99,7 @@ def test_location_alias_match_passes() -> None:
     assert result.rules[1].status == RuleStatus.PASS
 
 
-def test_remote_preference_accepts_remote_job_and_rejects_onsite_job() -> None:
+def test_remote_preference_accepts_remote_job_and_keeps_onsite_job() -> None:
     profile = make_profile(
         preferred_locations=[],
         preferences=CandidatePreferences(preferred_work_modes=[WorkMode.REMOTE]),
@@ -108,7 +108,20 @@ def test_remote_preference_accepts_remote_job_and_rejects_onsite_job() -> None:
     onsite = evaluate(make_job(location="Bengaluru", work_mode=WorkMode.ONSITE), profile)
 
     assert remote.passed is True
-    assert onsite.outcome == FilterOutcome.REJECT_LOCATION
+    assert onsite.passed is True
+    assert onsite.rules[1].status == RuleStatus.ACCEPTABLE
+    assert onsite.rules[1].details["preference_match"] is False
+
+
+def test_nonpreferred_known_location_is_a_soft_preference() -> None:
+    result = evaluate(
+        make_job(location="London, United Kingdom"),
+        make_profile(preferred_locations=["Pune"]),
+    )
+
+    assert result.passed is True
+    assert result.rules[1].rule == FilterRule.LOCATION
+    assert result.rules[1].status == RuleStatus.ACCEPTABLE
 
 
 def test_excluded_location_is_rejected() -> None:

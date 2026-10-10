@@ -14,7 +14,9 @@ from .models import (
 )
 
 
-class AIProvider(Protocol):
+class ChatModelProvider(Protocol):
+    """Structured chat capabilities consumed by extraction and explanations."""
+
     def extract_job_requirements(self, job_text: str) -> AIResult[JobRequirements]:
         """Extract validated facts from normalized job text."""
 
@@ -23,9 +25,6 @@ class AIProvider(Protocol):
         resume_text: str,
     ) -> AIResult[CandidateProfileProposal]:
         """Return a resume-derived proposal without applying it to a profile."""
-
-    def embed_text(self, text: str) -> AIResult[EmbeddingVector]:
-        """Return a validated vector for one text input."""
 
     def generate_explanation(
         self,
@@ -39,4 +38,8 @@ class TextEmbeddingProvider(Protocol):
         """Return a validated embedding for matching."""
 
 
-__all__ = ["AIProvider", "TextEmbeddingProvider"]
+class AIProvider(ChatModelProvider, TextEmbeddingProvider, Protocol):
+    """Backward-compatible provider supporting chat and embeddings."""
+
+
+__all__ = ["AIProvider", "ChatModelProvider", "TextEmbeddingProvider"]

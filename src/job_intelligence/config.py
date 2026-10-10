@@ -16,6 +16,7 @@ from pydantic import (
     NonNegativeInt,
     PositiveFloat,
     PositiveInt,
+    SecretStr,
     model_validator,
 )
 
@@ -25,6 +26,7 @@ from .models import NonEmptyText
 class LLMProvider(str, Enum):
     BEDROCK = "bedrock"
     BEDROCK_MANTLE = "bedrock_mantle"
+    OPENAI_COMPATIBLE = "openai_compatible"
 
 
 class EmbeddingProvider(str, Enum):
@@ -54,6 +56,11 @@ class Settings(BaseModel):
     mantle_base_url: NonEmptyText | None = None
     mantle_model_id: NonEmptyText = "openai.gpt-oss-20b"
     mantle_max_tokens: PositiveInt = 4096
+    chat_model: NonEmptyText | None = None
+    chat_base_url: NonEmptyText | None = None
+    chat_api_key: SecretStr | None = None
+    chat_max_tokens: PositiveInt = 4096
+    chat_timeout_seconds: PositiveFloat = 60
     local_embedding_model_id: NonEmptyText = "BAAI/bge-small-en-v1.5"
     local_embedding_device: NonEmptyText = "cpu"
     resume_max_size_bytes: PositiveInt | None = None
@@ -72,6 +79,8 @@ class Settings(BaseModel):
     http_max_retries: NonNegativeInt | None = None
     filter_acceptable_experience_gap_years: NonNegativeFloat | None = None
     filter_max_stretch_experience_gap_years: NonNegativeFloat | None = None
+    role_family_policy_json: NonEmptyText | None = None
+    role_family_policy_file: Path | None = None
     bedrock_timeout_seconds: PositiveFloat | None = None
     ai_max_attempts: PositiveInt | None = None
     matching_role_weight: NonNegativeFloat | None = None
@@ -117,7 +126,9 @@ class Settings(BaseModel):
             company_batch_size=_read_int(values, prefix + "COMPANY_BATCH_SIZE"),
             aws_region=_read_optional(values, prefix + "AWS_REGION"),
             llm_provider=LLMProvider(
-                _read_optional(values, prefix + "LLM_PROVIDER") or LLMProvider.BEDROCK
+                _read_optional(values, prefix + "CHAT_PROVIDER")
+                or _read_optional(values, prefix + "LLM_PROVIDER")
+                or LLMProvider.BEDROCK
             ),
             embedding_provider=EmbeddingProvider(
                 _read_optional(values, prefix + "EMBEDDING_PROVIDER")
@@ -132,6 +143,13 @@ class Settings(BaseModel):
             ),
             mantle_max_tokens=(
                 _read_int(values, prefix + "MANTLE_MAX_TOKENS") or 4096
+            ),
+            chat_model=_read_optional(values, prefix + "CHAT_MODEL"),
+            chat_base_url=_read_optional(values, prefix + "CHAT_BASE_URL"),
+            chat_api_key=_read_secret(values, prefix + "CHAT_API_KEY"),
+            chat_max_tokens=_read_int(values, prefix + "CHAT_MAX_TOKENS") or 4096,
+            chat_timeout_seconds=(
+                _read_float(values, prefix + "CHAT_TIMEOUT_SECONDS") or 60
             ),
             local_embedding_model_id=(
                 _read_optional(values, prefix + "LOCAL_EMBEDDING_MODEL_ID")
@@ -161,6 +179,14 @@ class Settings(BaseModel):
             filter_max_stretch_experience_gap_years=_read_float(
                 values,
                 prefix + "FILTER_MAX_STRETCH_EXPERIENCE_GAP_YEARS",
+            ),
+            role_family_policy_json=_read_optional(
+                values,
+                prefix + "ROLE_FAMILY_POLICY_JSON",
+            ),
+            role_family_policy_file=_read_path(
+                values,
+                prefix + "ROLE_FAMILY_POLICY_FILE",
             ),
             bedrock_timeout_seconds=_read_float(
                 values,
@@ -224,6 +250,11 @@ def _read_int(environ: Mapping[str, str], name: str) -> int | None:
 def _read_path(environ: Mapping[str, str], name: str) -> Path | None:
     value = _read_optional(environ, name)
     return Path(value) if value is not None else None
+
+
+def _read_secret(environ: Mapping[str, str], name: str) -> SecretStr | None:
+    value = _read_optional(environ, name)
+    return SecretStr(value) if value is not None else None
 
 
 def _read_uuid(environ: Mapping[str, str], name: str) -> UUID | None:

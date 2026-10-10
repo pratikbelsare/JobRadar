@@ -8,7 +8,7 @@ from .models import ExplanationContext
 
 JOB_REQUIREMENTS_PROMPT_VERSION = "job-requirements-v1"
 CANDIDATE_PROFILE_PROMPT_VERSION = "candidate-profile-v1"
-EXPLANATION_PROMPT_VERSION = "job-match-explanation-v1"
+EXPLANATION_PROMPT_VERSION = "job-match-explanation-v2"
 
 JOB_REQUIREMENTS_SYSTEM_PROMPT = """Extract only facts explicitly supported by the job description.
 Return one JSON object with the requested schema. Use null or empty arrays when a fact is
@@ -40,7 +40,13 @@ copied exactly from the supplied evidence context, not paraphrased; omit a refer
 when an exact evidence substring is unavailable. Never say that the candidate lacks a
 skill, does not know a skill, or has no skill. For an unsupported gap, use the exact
 phrase 'no evidence found' instead. Keep each list to at most three concise items and
-return JSON only."""
+return JSON only. Use this exact JSON shape and lowercase source enum values:
+{"why_fit":["text"],"strongest_matches":["text"],"potential_gaps":["text"],
+"experience_alignment":"text","important_considerations":["text"],
+"evidence_references":[{"source":"job","claim":"text","evidence":"exact substring",
+"reference_id":null}]}. The only allowed source strings are exactly "job", "candidate",
+or "match". Prefer an empty evidence_references array over an uncertain or paraphrased
+reference."""
 
 
 def job_requirements_prompt(job_text: str) -> str:

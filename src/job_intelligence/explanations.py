@@ -6,9 +6,9 @@ import json
 import re
 
 from .ai import (
-    AIProvider,
     AIProviderError,
     AIResult,
+    ChatModelProvider,
     ExplanationContext,
     ExplanationSource,
     JobMatchExplanation,
@@ -28,7 +28,7 @@ class ExplanationGroundingError(ValueError):
 class ExplanationService:
     """Generate explanations only when explicitly requested by a caller."""
 
-    def __init__(self, provider: AIProvider) -> None:
+    def __init__(self, provider: ChatModelProvider) -> None:
         self._provider = provider
 
     def generate(
@@ -43,7 +43,10 @@ class ExplanationService:
         try:
             result = self._provider.generate_explanation(context)
         except AIProviderError as exc:
-            raise ExplanationGenerationError("Could not generate job explanation") from exc
+            raise ExplanationGenerationError(
+                "Could not generate job explanation: "
+                f"{type(exc).__name__}: {str(exc) or 'provider failure'}"
+            ) from exc
         validate_explanation_grounding(result.value, context)
         return result
 
@@ -57,10 +60,11 @@ def build_explanation_context(
 ) -> ExplanationContext:
     """Build the bounded evidence packet given to an explanation provider."""
 
-    job_requirements = (
-        analysis.model_dump(mode="json")
-        if analysis is not None
-        else {
+    job_requirements: dict[str, object]
+    if analysis is not None:
+        job_requirements = analysis.model_dump(mode="json")
+    else:
+        job_requirements = {
             "title": job.title,
             "description": job.description,
             "location": job.location,
@@ -72,7 +76,6 @@ def build_explanation_context(
             "max_experience_years": job.max_experience_years,
             "domain": job.domain,
         }
-    )
     candidate_evidence = {
         "target_roles": profile.target_roles,
         "experience_years": profile.experience_years,

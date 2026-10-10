@@ -1,0 +1,1603 @@
+{
+  "analyses": [
+    {
+      "analyzed_at": "2026-10-02T07:57:46.263097",
+      "domain": "Finance",
+      "education": [],
+      "employment_type": "full_time",
+      "error": null,
+      "id": "1eb603da-ad9f-4098-9d66-b444719acb88",
+      "job_id": "d10e7304-1359-4c6a-afc4-04683c9319b1",
+      "job_version_id": "9ba9a334-2b1c-40eb-bbb2-977244d4c7ba",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": 6.0,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "familiarity with financial markets or investor workflows",
+        "experience with data platforms, APIs, or developer-facing products",
+        "background in analytics, research, or quantitative environments"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "product management experience",
+        "building and launching AI copilots or agents for external customers or end users, with demonstrated commercial impact",
+        "familiarity with how AI/ML models and AI agents are built and maintained",
+        "strong product instincts with a track record of building and launching 0\u21921 products",
+        "strong user research and customer discovery skills with deep curiosity about AI systems (LLMs, agents, retrieval, evals)",
+        "generalist knowledge of both engineering and design",
+        "able to design and evaluate prompts, contexts, and model behaviors",
+        "analytical thinker, comfortable with data and experimentation",
+        "great communicator and collaborator",
+        "high ownership mindset with a bias toward action and learning"
+      ],
+      "responsibilities": [
+        "Own AI product strategy for investor workflows",
+        "Build AI-native products, not just features",
+        "Translate frontier AI into real-world utility",
+        "Work directly with customers",
+        "Drive rapid experimentation and iteration",
+        "Collaborate across disciplines",
+        "Define quality, reliability, and trust",
+        "Shape the future of the platform"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2969,
+        "output_tokens": 1825
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:57:51.263591",
+      "domain": null,
+      "education": [],
+      "employment_type": "full_time",
+      "error": null,
+      "id": "66f3d4cf-0af6-4f9e-a747-e621372899c5",
+      "job_id": "425ca8ed-dcad-4fe4-980b-03c6862e4999",
+      "job_version_id": "2e14e7c3-11d1-483b-b089-1c9ccd3943f8",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": 4.0,
+      "min_experience_years": 3.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "SQL",
+        "Python",
+        "collaborating with brand manufacturers and/or retailers",
+        "understanding of their business needs",
+        "data-driven storytelling"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [],
+      "responsibilities": [
+        "Source, clean, organize, and contextualize data to support clients' key business questions.",
+        "Create and deliver meaningful insights to prospective clients.",
+        "Collaborate closely with Marketing, Sales, and Data Product teams to create and communicate data-driven insights.",
+        "Consult with prospective clients to uncover business opportunities and provide actionable insights that guide decision-making.",
+        "Identify new opportunities, size potential impact, and work closely with Marketing to establish and execute a go-to-market strategy."
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2367,
+        "output_tokens": 1405
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:57:54.928502",
+      "domain": "sales",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "74889e36-fbfb-492c-8080-7be5fc29dd6d",
+      "job_id": "789f1029-500f-47fa-b9e9-50147b557cb8",
+      "job_version_id": "7ca15b51-6fed-47ad-a5d6-1d67033b701e",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "enterprise subscription sales",
+        "sales goal attainment",
+        "product introduction",
+        "team player",
+        "data and financial analysis integration",
+        "high EQ",
+        "client relationship building",
+        "resourceful",
+        "resilient",
+        "oral and written communication",
+        "questioning skills"
+      ],
+      "responsibilities": [
+        "manage the whole sales process",
+        "qualify new leads",
+        "identify prospects",
+        "create advocates for products",
+        "assist customers with key questions",
+        "collaborate with research and data product teams",
+        "drive growth",
+        "position products within the investment field",
+        "close targeted opportunities"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2431,
+        "output_tokens": 2532
+      },
+      "work_modes": [
+        "remote",
+        "onsite",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:00.653804",
+      "domain": null,
+      "education": [
+        "Bachelor\u2019s degree in a highly quantitative field (Statistics, Economics, Physics, Mathematics, Engineering, or a related discipline)",
+        "Master\u2019s degree (preferred)"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "fc43f365-63b1-4d84-ab29-82eb888a7afe",
+      "job_id": "825b9857-f45e-49dd-bd33-720d9c323cf8",
+      "job_version_id": "0628f859-08d5-4817-863f-f97bc7d08e22",
+      "location_constraints": [
+        "Remote-friendly within the US",
+        "NYC or office hubs",
+        "East Coast work hours"
+      ],
+      "max_experience_years": 5.0,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "panel data",
+        "longitudinal consumer data",
+        "receipt data",
+        "transaction-level consumer data",
+        "Databricks",
+        "scaling advanced compute workloads"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Python",
+        "R",
+        "SQL",
+        "statistical distributions modeling"
+      ],
+      "responsibilities": [
+        "Design, validate, and deploy robust, scalable optimization frameworks and distribution models to ensure complete mathematical integrity across downstream metrics.",
+        "Explore and execute complex methodologies, evaluate methodological trade-offs, and implement advanced statistical procedures.",
+        "Partner cross-functionally to transition ad hoc code into standardized, version-controlled templates and logical libraries. You will ensure analytics are structured cleanly to power diverse product surfaces, ranging from interactive dashboards to LLM-driven applications.",
+        "Partner closely with Data Engineering to optimize code performance and scale analytical workflows. You will help transition complex statistical calculations from standard database queries into efficient, production-grade cloud compute architectures."
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2647,
+        "output_tokens": 2205
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:03.499162",
+      "domain": "market research",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "e6bee652-7a61-4bf0-9e35-7d4b629cbc81",
+      "job_id": "b219206c-ad12-453b-a2ed-a1c2c18b1ce7",
+      "job_version_id": "a2cd53f5-f262-4e39-bacc-4f92cde813ff",
+      "location_constraints": [],
+      "max_experience_years": 3.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "PySpark",
+        "AI tools"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "SQL",
+        "Python"
+      ],
+      "responsibilities": [
+        "Help deliver accurate, reliable data products by running and maintaining recurring analyses, completing quality checks, and investigating unexpected results",
+        "Work with large datasets to answer client questions using SQL and Python to explore data, identify trends, and understand what the results tell us about the companies and industries we cover",
+        "Investigate data problems by tracing discrepancies, testing assumptions, and evaluating possible explanations",
+        "Use AI and automation to improve work by identifying repetitive tasks, contributing to reusable workflows, and validating AI outputs",
+        "Collaborate across teams (Research, Engineering, Product, etc.) to resolve issues and deliver high-quality products, communicating findings clearly and documenting work",
+        "Suggest improvements to strengthen quality checks, improve documentation, refine methodology, or simplify processes",
+        "Take responsibility for a recurring analytical workflow, including quality checks and delivery",
+        "Investigate changes in a dataset to determine whether they reflect a business trend or a data issue",
+        "Evaluate a new alternative dataset with support from an experienced teammate",
+        "Build a reusable script or AI-assisted workflow that reduces manual work",
+        "Contribute an analysis or visualization to a new research product or client dashboard"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2781,
+        "output_tokens": 1742
+      },
+      "work_modes": [
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:07.282696",
+      "domain": null,
+      "education": [
+        "Bachelor's degree in Finance",
+        "Bachelor's degree in Economics",
+        "Bachelor's degree in Statistics",
+        "Bachelor's degree in related field"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "31a6ecc2-e29c-4a25-a31f-4e29fad4dd30",
+      "job_id": "eb235dad-b127-4d03-a490-fc94bf495cae",
+      "job_version_id": "b14a708e-fc37-4549-8da9-fa87a93c80ab",
+      "location_constraints": [
+        "NYC",
+        "US"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 3.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "Consumer Tech Sector Experience"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "SQL",
+        "Data Analysis",
+        "Research",
+        "Communication",
+        "Collaboration",
+        "Client Relationship",
+        "Product Marketing"
+      ],
+      "responsibilities": [
+        "Create and communicate valuable insights from our datasets",
+        "Learn to derive trends from large datasets using advanced queries, building cohort, concentration, penetration, and competitive analyses",
+        "Collaborate with our data team to help build new research products and features",
+        "Become a trusted resource for our subscribers",
+        "Work with Sales, Client Strategy and Marketing teams to position our products on clients calls, webcasts, and in press references"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2540,
+        "output_tokens": 2483
+      },
+      "work_modes": [
+        "remote",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:09.963417",
+      "domain": "financial services",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "fcbda5e3-45e4-4890-b505-c4e4805843e2",
+      "job_id": "d1e25f0a-100e-4ede-8306-40b846faf535",
+      "job_version_id": "61aad82d-4c3a-4d4c-bc9d-5fa63ddb9c2f",
+      "location_constraints": [
+        "NYC",
+        "Austin, TX",
+        "remote-friendly"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 2.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "sales",
+        "business development",
+        "client-facing",
+        "outbound prospecting",
+        "communication"
+      ],
+      "responsibilities": [
+        "own full sales cycle",
+        "source and qualify new leads",
+        "lead product demonstrations",
+        "coordinate with research teams",
+        "close new business",
+        "drive revenue",
+        "build relationships",
+        "collaborate across teams"
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2649,
+        "output_tokens": 1696
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:17.927338",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "25a58862-133b-4732-abb4-69b5d8834ad9",
+      "job_id": "4a5f7ee1-0a80-46a2-bffa-c4d14e2da01b",
+      "job_version_id": "d864fd1c-77eb-471d-bc0b-4bb75e32270d",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": 6.0,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "market intelligence or data analytics for consumer clients",
+        "consulting or alternative data company experience",
+        "understanding of consumer business needs"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "SQL",
+        "Python",
+        "Pyspark",
+        "GitHub",
+        "Databricks",
+        "sample or panel data analysis",
+        "ownership mentality",
+        "project management",
+        "communication",
+        "mentoring"
+      ],
+      "responsibilities": [
+        "Ramp up quickly to become the primary owner of high-impact data deliverables",
+        "Design, maintain, and run comprehensive QA processes to ensure data accuracy and reliability across assigned sector products and client deliverables",
+        "Serve as a trusted resource for clients and internal stakeholders by understanding client needs and aligning them with data methodologies, limitations, and coverage",
+        "Investigate and resolve complex data quality issues",
+        "Collaborate cross-functionally with Insights and Engineering to align on best practices and develop technical solutions that streamline workflows, optimize data processes, and expand automation",
+        "Proactively identify opportunities to improve efficiency, robustness, and data quality within team workflows",
+        "Mentor peers",
+        "Independently manage data quality end-to-end",
+        "Resolve complex issues across data pipelines and sources",
+        "Improve category classification and product attribution",
+        "Collaborate closely with cross-functional partners to ensure data is accurate, reliable, and clearly understood",
+        "Help clients understand methodology and data limitations"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2842,
+        "output_tokens": 1974
+      },
+      "work_modes": [
+        "remote",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:21.075637",
+      "domain": "Equity Research",
+      "education": [
+        "Bachelor's degree in Finance, Economics, Statistics or a related field"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "3bc9af8e-7ace-4211-94a3-a580e1f7c8e6",
+      "job_id": "6bd2045a-c18a-4556-b411-57db528abae4",
+      "job_version_id": "e15769f4-9cd7-4cd9-b9e0-fbd7851e9e9a",
+      "location_constraints": [
+        "Remote-friendly, can sit in NYC or anywhere else in the US"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 3.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "experience covering technology or software sectors"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "equity research",
+        "business analysis",
+        "data-driven fundamental investing",
+        "technology skills"
+      ],
+      "responsibilities": [
+        "Create and communicate valuable insights from our datasets",
+        "Collaborate with our data team to help build new research products and features",
+        "Become a trusted resource for our subscribers, the largest investors in the world",
+        "Work with our Sales, Client Strategy and Marketing teams to position our products on client calls, webcasts, and in press references"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2627,
+        "output_tokens": 2105
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:26.024896",
+      "domain": "alternative data",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "51ccf757-b722-4e5b-80b4-3b320bfff6fc",
+      "job_id": "32ad79ee-73c3-4886-a8da-7ea322ae7785",
+      "job_version_id": "2bf0dd3e-d14b-439f-87e7-1b6c9df00122",
+      "location_constraints": [
+        "East Coast work hours",
+        "United States",
+        "No visa sponsorship"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 5.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "alternative data experience",
+        "product development",
+        "client-facing experience",
+        "customer-centric product thinking",
+        "product innovation",
+        "collaboration",
+        "understanding of data technology"
+      ],
+      "responsibilities": [
+        "Drive revenue growth by building new alternative data products spanning entire sectors or financial verticals",
+        "Explore and evaluate new datasets for potential commercialization",
+        "Work closely with our Partnerships team to direct the sourcing of new datasets and build tight relationships with prospective data partners",
+        "Understand the workflows, problems, and needs of our users through client interviews and by working with the Revenue team",
+        "Drive the product strategy that creates value on top of YipitData's data and research",
+        "Communicate progress and roadmaps upward and outward",
+        "Have the potential to manage or build out a team of Product Development Analysts"
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2459,
+        "output_tokens": 1695
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:29.012893",
+      "domain": "Finance",
+      "education": [
+        "Bachelor's degree or above",
+        "Majors in Accounting, Finance, Business, Statistics, Computer Science, or a related field are preferred"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "a00b9662-32d3-47bd-a4eb-39493772e829",
+      "job_id": "94494862-a402-4be2-88ff-1d2240d6d88d",
+      "job_version_id": "93b6a8e3-516a-4343-86ce-ac37c29fa904",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 2.0,
+      "min_experience_years": 0.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Accounting knowledge",
+        "Bookkeeping experience",
+        "Transaction categorization",
+        "Invoice processing",
+        "Expense review",
+        "Account reconciliation",
+        "Accounts payable",
+        "Accounts receivable",
+        "General ledger entries",
+        "ERP system experience (SAP, Oracle, NetSuite, QuickBooks Online, Ramp, Xero)",
+        "Familiarity with accounting standards",
+        "Ability to distinguish company accounting categories",
+        "Basic data analysis skills",
+        "Excel",
+        "SQL",
+        "Python",
+        "Exceptional attention to detail",
+        "Problem-solving",
+        "Critical thinking",
+        "Ability to work independently",
+        "Excellent written and verbal communication skills in English"
+      ],
+      "responsibilities": [
+        "Review and validate accounting data exported from ERP systems, including vendor, invoice, bill, payment, and transaction records.",
+        "Apply accounting knowledge to understand different bookkeeping patterns and determine how transactions should be reflected in expense data.",
+        "Review and correct vendor and spend category mappings.",
+        "Identify and resolve duplicated, incomplete, or inconsistent records.",
+        "Investigate data quality issues and collaborate with data and engineering teams to improve data processing rules.",
+        "Ensure that the final data is accurate and reliable for business expense analysis.",
+        "Ensure compliance with company data security and confidentiality policies."
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2545,
+        "output_tokens": 1823
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:32.656964",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "a241feaf-9609-4a44-96ec-3c4fd0fac025",
+      "job_id": "ba850c9b-0c93-4bac-a93c-49bf44f01753",
+      "job_version_id": "c8c7ba7e-2e3e-44d5-bdc1-2f92986fecae",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 2.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "strong interpersonal skills",
+        "strong email communication skills",
+        "organized pipeline management",
+        "dynamic environment adaptability"
+      ],
+      "responsibilities": [
+        "qualify and follow up with inbound leads and marketing-qualified opportunities",
+        "proactively generate leads through outbound activity",
+        "manage a full sales cycle and close new business opportunities",
+        "run a full sales cycle from initial outreach to close",
+        "work on both inbound and outbound opportunities",
+        "sell to C-level executives",
+        "work in a startup environment"
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2647,
+        "output_tokens": 1232
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:36.563421",
+      "domain": "Finance",
+      "education": [
+        "Bachelor's degree or above",
+        "Majors in Accounting, Finance, Business, Statistics, Computer Science, or a related field are preferred"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "2fe2efe4-bcec-426b-965e-8073b9174b42",
+      "job_id": "d0ac376e-d779-428b-bd8c-49999d4ce9ce",
+      "job_version_id": "92f49df9-474c-4609-a81a-4ef1cf5439ed",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 2.0,
+      "min_experience_years": 0.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Accounting knowledge",
+        "Bookkeeping experience",
+        "Transaction categorization",
+        "Invoice processing",
+        "Expense review",
+        "Account reconciliation",
+        "Accounts payable",
+        "Accounts receivable",
+        "General ledger entries",
+        "ERP system experience (SAP, Oracle, NetSuite, QuickBooks Online, Ramp, Xero)",
+        "Familiarity with accounting standards",
+        "Ability to distinguish company accounting categories",
+        "Basic data analysis skills",
+        "Excel",
+        "SQL",
+        "Python",
+        "Exceptional attention to detail",
+        "Problem-solving",
+        "Critical thinking",
+        "Ability to work independently",
+        "Excellent written and verbal communication skills in English"
+      ],
+      "responsibilities": [
+        "Review and validate accounting data exported from ERP systems, including vendor, invoice, bill, payment, and transaction records.",
+        "Apply accounting knowledge to understand different bookkeeping patterns and determine how transactions should be reflected in expense data.",
+        "Review and correct vendor and spend category mappings.",
+        "Identify and resolve duplicated, incomplete, or inconsistent records.",
+        "Investigate data quality issues and collaborate with data and engineering teams to improve data processing rules.",
+        "Ensure that the final data is accurate and reliable for business expense analysis.",
+        "Ensure compliance with company data security and confidentiality policies."
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2545,
+        "output_tokens": 1823
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:39.671823",
+      "domain": "Software & AI benchmarking",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "619b5e84-54ec-40fd-8e5b-23228fc82d74",
+      "job_id": "9bdfb19a-c453-4437-9e32-fc2155c4bec5",
+      "job_version_id": "8c561a8f-c40e-4db4-9d62-c148760ff6ea",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 2.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "cold calling",
+        "cold emailing",
+        "LinkedIn messaging",
+        "outbound sales skills",
+        "creative prospecting",
+        "modern sales technology tools",
+        "Apollo",
+        "Orum",
+        "LinkedIn Sales Navigator",
+        "ZoomInfo",
+        "interpersonal skills",
+        "empathy",
+        "high emotional intelligence",
+        "self-motivation",
+        "proactivity",
+        "grit",
+        "rejection handling",
+        "resourcefulness",
+        "coachable",
+        "positive outlook",
+        "sound judgment"
+      ],
+      "responsibilities": [
+        "Break down the door on a new vertical, utilizing creative prospecting to meet stakeholders at all levels of larger businesses",
+        "Utilize outbound sales skills by leveraging a number of communication methods, including cold calling, cold emailing, LinkedIn messages, and more",
+        "Generate interest and meetings from Procurement leaders for a highly valuable product that helps them save time and money with their software and AI renewals",
+        "Develop skills across a broad range of modern sales technology tools, including Apollo, Orum, LinkedIn Sales Navigator, ZoomInfo, and more",
+        "Work closely with an Enterprise Sales Development Manager, Enablement Manager, and Head of Sales to develop your sales skills",
+        "Help refine the messaging that we use in order for us to be successful"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2367,
+        "output_tokens": 2141
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:42.455119",
+      "domain": "Finance",
+      "education": [
+        "Bachelor's degree or above",
+        "Majors in Accounting, Finance, Business, Statistics, Computer Science, or a related field are preferred"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "7e456e3e-44b7-44f4-b9d6-b3870494d15a",
+      "job_id": "8a359a01-631e-4ee8-b458-75de48e3fdfc",
+      "job_version_id": "0c1fce69-b06a-45a6-a863-11de81dc7f9d",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 2.0,
+      "min_experience_years": 0.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Accounting knowledge",
+        "Bookkeeping experience",
+        "Transaction categorization",
+        "Invoice processing",
+        "Expense review",
+        "Account reconciliation",
+        "Accounts payable",
+        "Accounts receivable",
+        "General ledger entries",
+        "ERP system experience (SAP, Oracle, NetSuite, QuickBooks Online, Ramp, Xero)",
+        "Familiarity with accounting standards",
+        "Ability to distinguish company accounting categories",
+        "Basic data analysis skills",
+        "Excel",
+        "SQL",
+        "Python",
+        "Exceptional attention to detail",
+        "Problem-solving",
+        "Critical thinking",
+        "Ability to work independently",
+        "Excellent written and verbal communication skills in English"
+      ],
+      "responsibilities": [
+        "Review and validate accounting data exported from ERP systems, including vendor, invoice, bill, payment, and transaction records.",
+        "Apply accounting knowledge to understand different bookkeeping patterns and determine how transactions should be reflected in expense data.",
+        "Review and correct vendor and spend category mappings.",
+        "Identify and resolve duplicated, incomplete, or inconsistent records.",
+        "Investigate data quality issues and collaborate with data and engineering teams to improve data processing rules.",
+        "Ensure that the final data is accurate and reliable for business expense analysis.",
+        "Ensure compliance with company data security and confidentiality policies."
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2545,
+        "output_tokens": 1823
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:45.059435",
+      "domain": "Investment",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "478ecb14-f061-451b-9e68-8ed3f4bbb54b",
+      "job_id": "bcef91cd-af58-4b15-ae38-cdac3abff7e6",
+      "job_version_id": "07e6417a-06b7-4716-beae-ac270596ddf3",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "enterprise subscription sales experience",
+        "meeting or exceeding sales goals",
+        "introducing complex products to new customers",
+        "team player",
+        "integration of data and financial analysis",
+        "high emotional intelligence",
+        "client relationship building",
+        "resourceful",
+        "resilient",
+        "strong oral and written communication",
+        "questioning skills"
+      ],
+      "responsibilities": [
+        "manage the entire sales process from start to finish",
+        "qualify new leads",
+        "identify prospects",
+        "create product advocates",
+        "assist customers with key questions",
+        "collaborate closely with research and data product teams",
+        "drive growth by positioning products within the investment field",
+        "close targeted opportunities"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2431,
+        "output_tokens": 1589
+      },
+      "work_modes": [
+        "remote",
+        "onsite"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:47.762065",
+      "domain": "Finance",
+      "education": [
+        "Bachelor's degree or above",
+        "Majors in Accounting, Finance, Business, Statistics, Computer Science, or a related field are preferred"
+      ],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "69f13b0d-2a4f-425d-96d9-ee013f10b644",
+      "job_id": "c217ff2c-5721-41ad-a178-038a95c95810",
+      "job_version_id": "903a0571-03f1-4e20-9562-895cbb65d450",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 2.0,
+      "min_experience_years": 0.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Accounting knowledge",
+        "Bookkeeping experience",
+        "Transaction categorization",
+        "Invoice processing",
+        "Expense review",
+        "Account reconciliation",
+        "Accounts payable",
+        "Accounts receivable",
+        "General ledger entries",
+        "ERP system experience (SAP, Oracle, NetSuite, QuickBooks Online, Ramp, Xero)",
+        "Familiarity with accounting standards",
+        "Ability to distinguish company accounting categories",
+        "Basic data analysis skills",
+        "Excel",
+        "SQL",
+        "Python",
+        "Exceptional attention to detail",
+        "Problem-solving",
+        "Critical thinking",
+        "Ability to work independently",
+        "Excellent written and verbal communication skills in English"
+      ],
+      "responsibilities": [
+        "Review and validate accounting data exported from ERP systems, including vendor, invoice, bill, payment, and transaction records.",
+        "Apply accounting knowledge to understand different bookkeeping patterns and determine how transactions should be reflected in expense data.",
+        "Review and correct vendor and spend category mappings.",
+        "Identify and resolve duplicated, incomplete, or inconsistent records.",
+        "Investigate data quality issues and collaborate with data and engineering teams to improve data processing rules.",
+        "Ensure that the final data is accurate and reliable for business expense analysis.",
+        "Ensure compliance with company data security and confidentiality policies."
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2545,
+        "output_tokens": 1823
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:51.572922",
+      "domain": "sales",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "46957e9d-9b32-4b72-bea1-3b33222b692b",
+      "job_id": "6fd70d3e-95e8-4b09-bdd0-d788cd0c2081",
+      "job_version_id": "79ccaa23-71af-4fe7-a86d-ad6c875eec5f",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "enterprise subscription sales",
+        "sales goal attainment",
+        "product introduction",
+        "team player",
+        "data and financial analysis integration",
+        "high EQ",
+        "client relationship building",
+        "resourceful",
+        "resilient",
+        "oral and written communication",
+        "questioning skills"
+      ],
+      "responsibilities": [
+        "manage the whole sales process",
+        "qualify new leads",
+        "identify prospects",
+        "create advocates for products",
+        "assist customers with key questions",
+        "collaborate with research and data product teams",
+        "drive growth",
+        "position products within the investment field",
+        "close targeted opportunities"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2431,
+        "output_tokens": 2545
+      },
+      "work_modes": [
+        "remote",
+        "onsite",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:58:59.774388",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "0d9f3a65-30b7-42d6-892d-73c630413fef",
+      "job_id": "62a8c8cf-fcc8-4ebc-9055-f6cf2326fa6c",
+      "job_version_id": "3c074cca-9931-418c-a894-af4ce96979b4",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "advanced SQL",
+        "Python",
+        "PySpark",
+        "AI tools"
+      ],
+      "responsibilities": [
+        "Own commercial data products \u2013 Own products end-to-end, from methodology development and product QA to feature design and ongoing product evolution. Develop deep expertise in how your product works and the investment workflows it supports.",
+        "Improve product quality through systems \u2013 Investigate complex data quality issues spanning upstream datasets, product methodologies, and downstream customer outputs. Build scalable monitoring, validation, and QA frameworks that improve quality while reducing manual effort.",
+        "Shape the evolution of the product \u2013 Work with Product Managers, Data Science, and Central Data. Identify opportunities for new methodologies, additional datasets, forecasting capabilities, AI-powered features, and entirely new product offerings.",
+        "Evaluate new data and methodologies \u2013 Analyze new internal and third-party datasets to determine whether they improve product accuracy, coverage, or customer value. Design experiments, quantify tradeoffs, and help determine what belongs in production.",
+        "Turn customer feedback into better products \u2013 Partner with Product Managers, Client Strategy and directly with sophisticated investors to understand how products are being used. Translate customer questions, trial feedback, and support escalations into durable product improvements.",
+        "Use AI to redesign analytical workflows \u2013 Leverage AI agents, automation, and evaluation frameworks to improve QA, documentation, methodology development, and customer-facing analytical experiences.",
+        "Build the next generation of data products \u2013 Look beyond maintaining today\u2019s products. Identify opportunities to create new analytical capabilities, improve client workflows, and expand the ways customers interact with our data."
+      ],
+      "seniority": "senior",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 3183,
+        "output_tokens": 1560
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:02.010764",
+      "domain": "market research",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "72cd8dab-0d1f-484e-9b2c-0401a07fe24e",
+      "job_id": "36b3d8fb-251f-40eb-bfdb-ce492141bf58",
+      "job_version_id": "836fdad0-8b4d-4e4a-bb0e-bb676b0ec8c3",
+      "location_constraints": [
+        "Asia Pacific"
+      ],
+      "max_experience_years": 5.0,
+      "min_experience_years": 2.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "experience in expert network",
+        "experience in financial industry",
+        "interest in financial markets"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "English fluency",
+        "Mandarin fluency",
+        "client relationship management",
+        "account management",
+        "product knowledge",
+        "communication skills",
+        "questioning skills",
+        "judgment",
+        "relationship building",
+        "high-touch client management",
+        "self-starter",
+        "team player"
+      ],
+      "responsibilities": [
+        "Identify engagement opportunities",
+        "Cultivate client relationships",
+        "Drive value and grow user engagement",
+        "Ensure clients get value from research",
+        "Expert on products and investment narratives",
+        "Identify and execute expansion opportunities, risk mitigation, and engagement strategies"
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2053,
+        "output_tokens": 1453
+      },
+      "work_modes": [
+        "unknown"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:05.346416",
+      "domain": "market research",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "e9c8fd3a-811a-4d3e-970f-78e138ad7e2a",
+      "job_id": "3873594e-9e77-42de-afed-25cd25570b0f",
+      "job_version_id": "5d3dc5ca-1e30-4ede-b319-f3aeb88a94f8",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "advanced SQL",
+        "Python",
+        "PySpark"
+      ],
+      "responsibilities": [
+        "Own data products end-to-end",
+        "Work with massive amounts of data",
+        "Tackle complex data problems",
+        "Use AI and tooling to drive meaningful leverage",
+        "Partner with Research, Engineering, Product, and other teams",
+        "Identify opportunities to improve products and processes",
+        "Develop a new methodology that significantly improves the accuracy of an existing investment product",
+        "Build an entirely new research product covering an adjacent market or investment theme",
+        "Evaluate a new alternative dataset and determine how it can strengthen existing estimates or unlock new analytical capabilities",
+        "Create an AI-powered analytical workflow that dramatically reduces the time required to develop recurring research",
+        "Design a new dashboard or AI experience that changes how clients explore sector data"
+      ],
+      "seniority": "senior",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2557,
+        "output_tokens": 1983
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:08.121652",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "bfa743d4-0d15-44b4-9972-adb1cabd8c4f",
+      "job_id": "484603d3-326e-4607-b40d-8c14190b3f5c",
+      "job_version_id": "fd75fb9a-4555-4965-9e66-00320c8d3db2",
+      "location_constraints": [],
+      "max_experience_years": 5.0,
+      "min_experience_years": 2.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "professional fluency in English and Mandarin",
+        "2-5 years experience in expert network or financial industry",
+        "genuine interest in financial markets",
+        "resourceful",
+        "resilient",
+        "excited to learn",
+        "strong oral and written communication",
+        "great questioning skills",
+        "effective at communicating complex ideas",
+        "master of judgment",
+        "sensitive to clients\u2019 needs",
+        "build strong relationships",
+        "manage high-touch high-volume client base",
+        "positive",
+        "self-starter",
+        "team player"
+      ],
+      "responsibilities": [
+        "interact with sophisticated investors in the APAC market",
+        "identify engagement opportunities",
+        "cultivate meaningful client relationships",
+        "find new and creative ways to drive value and grow user engagement",
+        "become a trusted resource for clients",
+        "be experts on products and associated investment narratives",
+        "identify and execute expansion opportunities, risk mitigation and engagement strategies"
+      ],
+      "seniority": "associate",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2072,
+        "output_tokens": 709
+      },
+      "work_modes": [
+        "unknown"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:10.163581",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "0b7e0489-a977-4f31-bdf6-9938fbeebb0b",
+      "job_id": "34563145-7fb1-427c-92a4-34b09550d028",
+      "job_version_id": "5cd0735b-fffe-4b08-b9ec-b0cfda6ffd93",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 4.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "data management platforms",
+        "product attribution systems",
+        "machine learning tools",
+        "data mapping",
+        "tagging",
+        "categorization practices"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Python",
+        "Pyspark",
+        "SQL",
+        "data analysis",
+        "tagging systems",
+        "machine learning tools",
+        "consumer product data",
+        "retail or brand data",
+        "attention to detail",
+        "problem-solving",
+        "critical-thinking",
+        "task and project management",
+        "communication",
+        "collaboration",
+        "project execution"
+      ],
+      "responsibilities": [
+        "Work with corporate retail and brand customers to understand their category structures and product attribution requirements.",
+        "Execute the mapping of products to customers' category needs, utilizing both manual tagging and machine learning tools.",
+        "Apply strong judgment and interpretation skills to ensure that data mapping aligns with customer specifications and business goals.",
+        "Collaborate with cross-functional teams to plan and deliver projects on time, ensuring high levels of accuracy and precision.",
+        "Continuously monitor and improve product attribution processes to increase efficiency and quality.",
+        "Leverage technical skills to enhance existing processes and tools that support data operations.",
+        "Maintain strong attention to detail and ensure accuracy in every aspect of the data mapping process.",
+        "Take accountability for successfully executing projects, including meeting deadlines and client expectations."
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2425,
+        "output_tokens": 1248
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:12.385595",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "55c47c6e-0ac4-4917-abbc-0f5dd02c4900",
+      "job_id": "6d89a39a-e5e1-4dbb-8719-dbb5c72678d7",
+      "job_version_id": "9178cb81-475d-4782-b8a7-3a2de22fc286",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 4.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "Experience with data management platforms, product attribution systems, or machine learning tools",
+        "Familiarity with data mapping, tagging, and categorization practices"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Applied Python, Pyspark, and/or SQL skills",
+        "Proficiency in data analysis, tagging systems, and machine learning tools",
+        "Knowledge of consumer product data and experience working with retail or brand data",
+        "Exceptional attention to detail",
+        "Excellent problem\u2011solving and critical\u2011thinking skills",
+        "Ability to manage multiple tasks and projects while maintaining a high degree of accuracy",
+        "Strong communication and collaboration skills",
+        "Proven ability to execute projects efficiently and meet deadlines"
+      ],
+      "responsibilities": [
+        "Work with corporate retail and brand customers to understand their category structures and product attribution requirements",
+        "Execute the mapping of products to customers' category needs, utilizing both manual tagging and machine learning tools",
+        "Apply strong judgment and interpretation skills to ensure that data mapping aligns with customer specifications and business goals",
+        "Collaborate with cross\u2011functional teams to plan and deliver projects on time, ensuring high levels of accuracy and precision",
+        "Continuously monitor and improve product attribution processes to increase efficiency and quality",
+        "Leverage technical skills to enhance existing processes and tools that support data operations",
+        "Maintain strong attention to detail and ensure accuracy in every aspect of the data mapping process",
+        "Take accountability for successfully executing projects, including meeting deadlines and client expectations"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2425,
+        "output_tokens": 1398
+      },
+      "work_modes": [
+        "remote",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:15.010532",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "2801941e-cf58-4eed-9279-9a42af1f2305",
+      "job_id": "7854ace8-0fce-4418-8ec6-a34cb4da2860",
+      "job_version_id": "e6b0a700-23ea-4986-92f1-cfe29615e4a9",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 2.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "data management platforms",
+        "product attribution systems",
+        "machine learning tools",
+        "data mapping",
+        "tagging",
+        "categorization practices"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Python",
+        "Pyspark",
+        "SQL",
+        "data analysis",
+        "tagging systems",
+        "machine learning tools",
+        "consumer product data",
+        "retail or brand data",
+        "attention to detail",
+        "problem-solving",
+        "critical-thinking",
+        "task management",
+        "communication",
+        "collaboration",
+        "project execution"
+      ],
+      "responsibilities": [
+        "Work with corporate retail and brand customers to understand their category structures and product attribution requirements.",
+        "Execute the mapping of products to customers' category needs, utilizing both manual tagging and machine learning tools.",
+        "Apply strong judgment and interpretation skills to ensure that data mapping aligns with customer specifications and business goals.",
+        "Collaborate with cross-functional teams to plan and deliver projects on time, ensuring high levels of accuracy and precision.",
+        "Continuously monitor and improve product attribution processes to increase efficiency and quality.",
+        "Leverage technical skills to enhance existing processes and tools that support data operations.",
+        "Maintain strong attention to detail and ensure accuracy in every aspect of the data mapping process.",
+        "Take accountability for successfully executing projects, including meeting deadlines and client expectations."
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2425,
+        "output_tokens": 1728
+      },
+      "work_modes": [
+        "remote",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:17.052286",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "954492e4-a81a-4049-8dd5-e2c2eaadc2e2",
+      "job_id": "a6ce646a-f05a-45c2-af00-2052742cb6ce",
+      "job_version_id": "34429cb4-3cf7-4ba8-ad6e-9ca02dbce655",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 4.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "data management platforms",
+        "product attribution systems",
+        "machine learning tools",
+        "data mapping",
+        "tagging",
+        "categorization practices"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Python",
+        "Pyspark",
+        "SQL",
+        "data analysis",
+        "tagging systems",
+        "machine learning tools",
+        "consumer product data",
+        "retail or brand data",
+        "attention to detail",
+        "problem-solving",
+        "critical-thinking",
+        "task and project management",
+        "communication",
+        "collaboration",
+        "project execution"
+      ],
+      "responsibilities": [
+        "Work with corporate retail and brand customers to understand their category structures and product attribution requirements.",
+        "Execute the mapping of products to customers' category needs, utilizing both manual tagging and machine learning tools.",
+        "Apply strong judgment and interpretation skills to ensure that data mapping aligns with customer specifications and business goals.",
+        "Collaborate with cross-functional teams to plan and deliver projects on time, ensuring high levels of accuracy and precision.",
+        "Continuously monitor and improve product attribution processes to increase efficiency and quality.",
+        "Leverage technical skills to enhance existing processes and tools that support data operations.",
+        "Maintain strong attention to detail and ensure accuracy in every aspect of the data mapping process.",
+        "Take accountability for successfully executing projects, including meeting deadlines and client expectations."
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2425,
+        "output_tokens": 1248
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:23.114892",
+      "domain": null,
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "48bbb086-3e47-416c-a9a0-a14918c547e3",
+      "job_id": "f2b93efe-a46a-4c33-b314-ba395c2bf3c2",
+      "job_version_id": "0ee59e81-7a1f-4c1f-a41c-fffd1db3f643",
+      "location_constraints": [
+        "India"
+      ],
+      "max_experience_years": 4.0,
+      "min_experience_years": 1.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [
+        "Experience with data management platforms",
+        "Product attribution systems",
+        "Machine learning tools",
+        "Familiarity with data mapping",
+        "Tagging",
+        "Categorization practices"
+      ],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "Applied Python",
+        "Pyspark",
+        "SQL",
+        "Proficiency in data analysis",
+        "Tagging systems",
+        "Machine learning tools",
+        "Knowledge of consumer product data",
+        "Experience working with retail or brand data",
+        "Exceptional attention to detail",
+        "Excellent problem-solving and critical-thinking skills",
+        "Ability to manage multiple tasks and projects while maintaining a high degree of accuracy",
+        "Strong communication and collaboration skills",
+        "Proven ability to execute projects efficiently and meet deadlines"
+      ],
+      "responsibilities": [
+        "Work with corporate retail and brand customers to understand their category structures and product attribution requirements.",
+        "Execute the mapping of products to customers' category needs, utilizing both manual tagging and machine learning tools.",
+        "Apply strong judgment and interpretation skills to ensure that data mapping aligns with customer specifications and business goals.",
+        "Collaborate with cross-functional teams to plan and deliver projects on time, ensuring high levels of accuracy and precision.",
+        "Continuously monitor and improve product attribution processes to increase efficiency and quality.",
+        "Leverage technical skills to enhance existing processes and tools that support data operations.",
+        "Maintain strong attention to detail and ensure accuracy in every aspect of the data mapping process.",
+        "Take accountability for successfully executing projects, including meeting deadlines and client expectations."
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2418,
+        "output_tokens": 1859
+      },
+      "work_modes": [
+        "remote",
+        "flexible"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:25.490925",
+      "domain": null,
+      "education": [],
+      "employment_type": "full_time",
+      "error": null,
+      "id": "2a43a05a-a1de-48ef-9fb1-f8dcdf7048a2",
+      "job_id": "a8b04d2f-a31c-4e23-bae0-b97b1c470736",
+      "job_version_id": "748d56c9-3783-4735-be16-5e9dc2680eb5",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": null,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [],
+      "responsibilities": [
+        "Identify and evaluate potential data partners with high strategic and product value",
+        "Engage directly with CEOs and senior executives \u2014 many of whom have not previously monetized their data \u2014 to assess opportunity and build alignment",
+        "Lead discovery and diligence processes to understand data quality, defensibility, and long-term product applicability",
+        "Develop strategic and economic business cases for partnership opportunities",
+        "Negotiate and execute complex, enterprise-level agreements, including exclusive arrangements",
+        "Coordinate cross-functionally with legal, product, compliance, engineering, and executive leadership",
+        "Exercise strong judgment in prioritizing opportunities and determining when to pursue, pause, or walk away"
+      ],
+      "seniority": "director",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2076,
+        "output_tokens": 668
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:31.250207",
+      "domain": "market research and analytics",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "b0288ace-2fe7-4e6d-b7f8-58305cdd7056",
+      "job_id": "3a6e04d1-cb70-43f5-9b2b-e741de29ec84",
+      "job_version_id": "f65f9acf-8d58-48fc-892b-9d62933773e0",
+      "location_constraints": [
+        "Remote within the United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": null,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "enterprise sales",
+        "strategic partnerships",
+        "corporate development",
+        "investment banking",
+        "strategy consulting",
+        "transaction evaluation and execution",
+        "executive engagement",
+        "judgment in high\u2011stakes evaluation",
+        "grit and resilience",
+        "data ecosystem curiosity",
+        "negotiation",
+        "cross\u2011functional coordination",
+        "diligence",
+        "business case development",
+        "data partner evaluation"
+      ],
+      "responsibilities": [
+        "Identify and evaluate potential data partners with high strategic and product value",
+        "Engage directly with CEOs and senior executives to assess opportunity and build alignment",
+        "Lead discovery and diligence processes to understand data quality, defensibility, and long\u2011term product applicability",
+        "Develop strategic and economic business cases for partnership opportunities",
+        "Negotiate and execute complex, enterprise\u2011level agreements, including exclusive arrangements",
+        "Coordinate cross\u2011functionally with legal, product, compliance, engineering, and executive leadership",
+        "Exercise strong judgment in prioritizing opportunities and determining when to pursue, pause, or walk away"
+      ],
+      "seniority": "director",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2076,
+        "output_tokens": 2100
+      },
+      "work_modes": [
+        "remote"
+      ]
+    },
+    {
+      "analyzed_at": "2026-10-02T07:59:33.913640",
+      "domain": "Investment",
+      "education": [],
+      "employment_type": "unknown",
+      "error": null,
+      "id": "87395c43-6db4-48dd-b2a9-17b3b324cbee",
+      "job_id": "6e8d6b4d-257e-4bf5-b0f8-6ec4ba41b637",
+      "job_version_id": "afdce121-4f73-4a88-ae75-3fc3eed41323",
+      "location_constraints": [
+        "United States"
+      ],
+      "max_experience_years": null,
+      "min_experience_years": 4.0,
+      "model_id": "openai.gpt-oss-20b",
+      "preferred_skills": [],
+      "prompt_version": "job-requirements-v1",
+      "provider": "bedrock_mantle",
+      "required_skills": [
+        "enterprise subscription sales experience",
+        "meeting or exceeding sales goals",
+        "introducing complex products to new customers",
+        "team player",
+        "integration of data and financial analysis",
+        "high emotional intelligence",
+        "client relationship building",
+        "resourceful",
+        "resilient",
+        "strong oral and written communication",
+        "questioning skills"
+      ],
+      "responsibilities": [
+        "manage the entire sales process from start to finish",
+        "qualify new leads",
+        "identify prospects",
+        "create product advocates",
+        "assist customers with key questions",
+        "collaborate closely with research and data product teams",
+        "drive growth by positioning products within the investment field",
+        "close targeted opportunities"
+      ],
+      "seniority": "unknown",
+      "status": "succeeded",
+      "usage": {
+        "input_tokens": 2431,
+        "output_tokens": 1589
+      },
+      "work_modes": [
+        "remote",
+        "onsite"
+      ]
+    }
+  ]
+}

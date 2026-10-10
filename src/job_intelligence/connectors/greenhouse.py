@@ -48,6 +48,7 @@ class GreenhouseConnector(JobSourceConnector):
     ) -> None:
         self._http_client = http_client
         self._api_base_url = api_base_url.rstrip("/")
+        self._listed_details: dict[tuple[str, str], dict[str, Any]] = {}
 
     def list_jobs(self, company: Company) -> JobListingResult:
         try:
@@ -60,10 +61,18 @@ class GreenhouseConnector(JobSourceConnector):
                     {"content": "true", "page": page, "per_page": self._PAGE_SIZE},
                 )
                 entries = _jobs_array(payload)
-                references.extend(
-                    _job_reference(company, board_token, self._api_base_url, entry)
-                    for entry in entries
-                )
+                for entry in entries:
+                    reference = _job_reference(
+                        company,
+                        board_token,
+                        self._api_base_url,
+                        entry,
+                    )
+                    references.append(reference)
+                    if _has_description(entry):
+                        self._listed_details[
+                            (str(company.id), reference.source_job_id)
+                        ] = dict(entry)
                 if len(entries) < self._PAGE_SIZE:
                     break
                 page += 1
@@ -81,10 +90,14 @@ class GreenhouseConnector(JobSourceConnector):
 
     def get_job(self, job_reference: JobReference) -> JobDetailsResult:
         try:
-            payload = self._get_json(
-                str(job_reference.details_url),
-                {"content": "true"},
+            payload = self._listed_details.get(
+                (str(job_reference.company_id), job_reference.source_job_id)
             )
+            if payload is None:
+                payload = self._get_json(
+                    str(job_reference.details_url),
+                    {"content": "true"},
+                )
             job = _job_details(job_reference, payload)
             return JobDetailsResult(status=ConnectorStatus.SUCCESS, job=job)
         except ConnectorError as exc:
@@ -165,7 +178,7 @@ def _job_reference(
         source_job_id=str(source_job_id),
         title=title,
         location=_location(entry.get("location")),
-        source_url=source_url,
+        source_url=TypeAdapter(AnyHttpUrl).validate_python(source_url),
         details_url=details_url,
     )
 
@@ -180,9 +193,9 @@ def _job_details(reference: JobReference, payload: Mapping[str, Any]) -> RawJobD
         raise ConnectorParseError("Greenhouse job detail is missing title")
     description = next(
         (
-            payload.get(field)
+            value
             for field in ("content", "description", "job_description")
-            if isinstance(payload.get(field), str) and payload.get(field).strip()
+            if isinstance((value := payload.get(field)), str) and value.strip()
         ),
         None,
     )
@@ -197,11 +210,19 @@ def _job_details(reference: JobReference, payload: Mapping[str, Any]) -> RawJobD
         source_job_id=reference.source_job_id,
         title=title,
         location=_location(payload.get("location")) or reference.location,
-        source_url=source_url,
+        source_url=TypeAdapter(AnyHttpUrl).validate_python(source_url),
         details_url=reference.details_url,
         description=description,
         raw_payload=dict(payload),
     )
+
+
+def _has_description(payload: Mapping[str, Any]) -> bool:
+    for field in ("content", "description", "job_description"):
+        value = payload.get(field)
+        if isinstance(value, str) and value.strip():
+            return True
+    return False
 
 
 def _location(value: Any) -> str | None:

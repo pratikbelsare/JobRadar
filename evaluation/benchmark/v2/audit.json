@@ -1,0 +1,89 @@
+{
+  "ambiguous_hard_negative_cases": 23,
+  "companies": {
+    "Dialpad": 9,
+    "Garner Health": 15,
+    "InMobi": 11,
+    "Moloco": 11,
+    "PhysicsX": 11,
+    "Samaya AI": 6,
+    "Snorkel AI": 13,
+    "Together AI": 8
+  },
+  "duplicate_group_count": 0,
+  "eligibility": {
+    "eligible": 11,
+    "ineligible": 0,
+    "severe_stretch": 48,
+    "stretch": 11,
+    "unknown": 14
+  },
+  "independent_job_count": 84,
+  "likely_label_2_candidates": 18,
+  "likely_label_3_candidates": 17,
+  "locations": {
+    "Austin, US": 1,
+    "Bangalore": 6,
+    "Bengaluru": 1,
+    "Bengaluru, India": 3,
+    "Buenos Aires, Argentina": 1,
+    "Kitchener, Canada": 1,
+    "London": 1,
+    "London, UK": 1,
+    "London, United Kingdom": 4,
+    "Lucknow": 2,
+    "Menlo Park, California, United States": 3,
+    "Menlo Park, California, United States; New York, New York, United States; Seattle, Washington, United States": 1,
+    "Menlo Park, California, United States; New York, United States": 1,
+    "Mountain View, California, United States": 4,
+    "New York City, NY (Hybrid); San Francisco, CA (Hybrid)": 6,
+    "New York City, NY (Hybrid); San Francisco, CA (Hybrid); United States (Remote)": 2,
+    "New York City, New York": 14,
+    "New York, New York, United States": 2,
+    "New York, United States": 3,
+    "Remote": 1,
+    "San Francisco": 8,
+    "San Francisco, CA (Hybrid)": 5,
+    "San Mateo, CA": 2,
+    "Seattle, Washington, United States": 1,
+    "Seoul, Korea": 5,
+    "Singapore": 3,
+    "Tokyo, Japan": 1,
+    "Vancouver, Canada": 1
+  },
+  "raw_job_count": 84,
+  "role_categories": {
+    "ai_engineer": 2,
+    "ambiguous_hard_negative": 23,
+    "analytics_data_adjacent": 20,
+    "applied_scientist": 13,
+    "data_scientist": 4,
+    "genai_llm": 0,
+    "irrelevant": 6,
+    "ml_engineer": 16
+  },
+  "role_families": {
+    "adjacent": 0,
+    "core": 5,
+    "exclude": 5,
+    "unknown": 74
+  },
+  "selection_strata": {
+    "adjacent": 20,
+    "irrelevant": 29,
+    "target_regular": 17,
+    "target_stretch": 18
+  },
+  "semantic_fingerprint": "87a5cec16c269c59225531301713fac72b9d10877eac1dec502e9f3c2ae13fb4",
+  "seniority": {
+    "associate": 1,
+    "director": 3,
+    "intern": 2,
+    "lead": 2,
+    "manager": 2,
+    "mid": 1,
+    "principal": 2,
+    "senior": 24,
+    "unknown": 47
+  }
+}

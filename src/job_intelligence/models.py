@@ -262,7 +262,43 @@ class JobAnalysis(Model):
         return self
 
 
+class RelevanceComponentEvidence(Model):
+    """One explainable component contribution to the relevance score."""
+
+    raw_score: Score
+    weight: NonNegativeFloat
+    weighted_contribution: NonNegativeFloat
+    available: bool
+    numerator_share: NonNegativeFloat | None = None
+
+
+class RelevanceEvidence(Model):
+    """Deterministic evidence for the relevance-only aggregation."""
+
+    score: Score
+    numerator: NonNegativeFloat
+    denominator: NonNegativeFloat
+    included_components: list[NonEmptyText] = Field(default_factory=list)
+    excluded_components: list[NonEmptyText] = Field(default_factory=list)
+    components: dict[str, RelevanceComponentEvidence] = Field(default_factory=dict)
+
+
+class EligibilitySummary(Model):
+    """Backward-compatible snapshot of the existing Stage-2 eligibility result."""
+
+    status: NonEmptyText
+    experience_gap_years: NonNegativeFloat | None = None
+    experience_status: NonEmptyText
+    seniority_status: NonEmptyText
+    hard_block_reasons: list[NonEmptyText] = Field(default_factory=list)
+    reason_codes: list[NonEmptyText] = Field(default_factory=list)
+    visible: bool
+    recommended_to_retain: bool
+
+
 class JobMatch(Model):
+    """Persisted match with legacy blended scoring and additive assessment fields."""
+
     id: UUID = Field(default_factory=uuid4)
     job_id: UUID
     candidate_profile_id: UUID
@@ -273,8 +309,15 @@ class JobMatch(Model):
     domain_match: Score
     location_match: Score
     preference_match: Score
-    final_score: Score
+    final_score: Score = Field(
+        description="Legacy blended score retained for backward compatibility."
+    )
     ranking_version: NonEmptyText
+    legacy_final_score: Score | None = None
+    relevance_score: Score | None = None
+    relevance_evidence: RelevanceEvidence | None = None
+    eligibility: EligibilitySummary | None = None
+    role_family_class: NonEmptyText | None = None
     evidence: dict[str, object] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=datetime.utcnow)
 

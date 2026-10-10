@@ -5,6 +5,8 @@ __pycache__/
 .venv/
 venv/
 .env
+.env.*
+!.env.example
 
 .pytest_cache/
 .mypy_cache/
@@ -21,6 +23,8 @@ data/raw/
 data/processed/
 data/jobs/
 data/job-snapshots/
+data/moloco-e2e-v1*/
+data/multi-company-e2e-v1*/
 evaluation/results/
 evaluation/profile/
 

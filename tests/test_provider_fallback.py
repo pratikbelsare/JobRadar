@@ -8,6 +8,7 @@ from job_intelligence.ai import (
     HuggingFaceEmbeddingProvider,
     build_ai_providers,
 )
+from job_intelligence.ai.models import ExplanationContext
 from job_intelligence.config import Settings
 
 
@@ -101,6 +102,61 @@ def test_mantle_provider_rejects_malformed_completion() -> None:
 
     with pytest.raises(AIResponseError):
         BedrockMantleProvider(fallback_settings(), client=client).extract_job_requirements("role")
+
+
+def test_mantle_provider_retries_strict_explanation_grounding_failure() -> None:
+    context = ExplanationContext(
+        job_id="00000000-0000-0000-0000-000000000001",
+        candidate_profile_id="00000000-0000-0000-0000-000000000002",
+        job_title="Data Scientist",
+        job_requirements={"required_skills": ["Python"]},
+        candidate_evidence={"skills": ["Python"]},
+        match_evidence={"relevance_score": 0.8},
+    )
+    client = FakeMantleClient(
+        [
+            mantle_response(
+                {
+                    "why_fit": ["Python aligns."],
+                    "strongest_matches": [],
+                    "potential_gaps": [],
+                    "experience_alignment": "Review experience evidence.",
+                    "important_considerations": [],
+                    "evidence_references": [
+                        {
+                            "source": "candidate",
+                            "claim": "Python alignment",
+                            "evidence": "paraphrased Python experience",
+                        }
+                    ],
+                }
+            ),
+            mantle_response(
+                {
+                    "why_fit": ["Python aligns."],
+                    "strongest_matches": ["Python"],
+                    "potential_gaps": [],
+                    "experience_alignment": "Review experience evidence.",
+                    "important_considerations": [],
+                    "evidence_references": [
+                        {
+                            "source": "candidate",
+                            "claim": "Python alignment",
+                            "evidence": "Python",
+                        }
+                    ],
+                }
+            ),
+        ]
+    )
+
+    result = BedrockMantleProvider(fallback_settings(), client=client).generate_explanation(
+        context
+    )
+
+    assert result.value.evidence_references[0].evidence == "Python"
+    assert len(client.calls) == 2
+    assert "Explanation grounding failed" in client.calls[1]["messages"][1]["content"]
 
 
 def test_local_embedding_provider_normalizes_and_preserves_dimensions() -> None:

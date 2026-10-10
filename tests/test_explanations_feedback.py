@@ -198,7 +198,7 @@ def test_bedrock_explanation_output_is_schema_validated() -> None:
     ).generate_explanation(context)
 
     assert result.value.experience_alignment
-    assert result.metadata.prompt_version == "job-match-explanation-v1"
+    assert result.metadata.prompt_version == "job-match-explanation-v2"
 
 
 def test_bedrock_explanation_malformed_output_is_typed() -> None:

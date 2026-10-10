@@ -4,12 +4,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Callable, TypeVar
+from typing import Callable, TypeVar, cast
 from uuid import UUID, uuid4
 
-from ..ai import AIProvider, TextEmbeddingProvider, to_job_analysis
+from ..ai import ChatModelProvider, TextEmbeddingProvider, to_job_analysis
 from ..ai.prompts import JOB_REQUIREMENTS_PROMPT_VERSION
 from ..analysis_repository import JobAnalysisRepository
+from ..assessment import JobAssessmentService
 from ..change_detection import JobChangeType
 from ..company_repository import CompanyRepository
 from ..connectors import ConnectorRegistry, ConnectorStatus
@@ -252,10 +253,11 @@ class JobAnalysisWorker:
         profiles: CandidateProfileRepository,
         analyses: JobAnalysisRepository,
         matches: JobMatchRepository,
-        provider: AIProvider,
+        provider: ChatModelProvider,
         model_id: str,
         embedding_provider: TextEmbeddingProvider | None = None,
         matcher: HybridJobMatcher | None = None,
+        assessment_service: JobAssessmentService | None = None,
     ) -> None:
         if not model_id.strip():
             raise ValueError("model_id must not be blank")
@@ -265,9 +267,12 @@ class JobAnalysisWorker:
         self._matches = matches
         self._provider = provider
         self._model_id = model_id
+        self._assessment_service = assessment_service
         self._matcher = matcher or HybridJobMatcher(
             MatchingConfig(),
-            embedding_provider=embedding_provider or provider,
+            embedding_provider=(
+                embedding_provider or cast(TextEmbeddingProvider, provider)
+            ),
         )
 
     def process(self, message: JobAnalysisMessage) -> AnalysisResult:
@@ -339,11 +344,23 @@ class JobAnalysisWorker:
                     lambda: self._analyses.save(analysis),
                 )
 
-        match = _analysis_stage(
-            "matching_and_embedding",
-            identifiers,
-            lambda: self._matcher.match(state.job, profile, analysis=analysis),
-        )
+        if self._assessment_service is None:
+            match = _analysis_stage(
+                "matching_and_embedding",
+                identifiers,
+                lambda: self._matcher.match(state.job, profile, analysis=analysis),
+            )
+        else:
+            assessment_service = self._assessment_service
+            match = _analysis_stage(
+                "matching_eligibility_and_role_family",
+                identifiers,
+                lambda: assessment_service.evaluate(
+                    state.job,
+                    profile,
+                    analysis,
+                ).match,
+            )
         existing = _analysis_stage(
             "match_cache_lookup",
             identifiers,

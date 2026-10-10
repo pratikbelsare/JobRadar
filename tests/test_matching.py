@@ -35,7 +35,7 @@ class FakeEmbeddingProvider:
         )
 
 
-def make_job(**overrides) -> Job:
+def make_job(**overrides: object) -> Job:
     values = {
         "source_job_id": "job-1",
         "company_id": uuid4(),
@@ -54,7 +54,7 @@ def make_job(**overrides) -> Job:
     return Job(**values)
 
 
-def make_profile(**overrides) -> CandidateProfile:
+def make_profile(**overrides: object) -> CandidateProfile:
     values = {
         "target_roles": ["Java Developer"],
         "experience_years": 3,
@@ -93,15 +93,16 @@ def test_matching_weights_are_validated_and_configurable() -> None:
         make_profile(),
     )
 
-    assert match.final_score == pytest.approx(
+    expected_numerator = (
         match.role_match * 0.4
         + match.skill_match * 0.2
         + match.experience_match * 0.1
         + match.responsibility_match * 0.1
         + match.domain_match * 0.1
         + match.location_match * 0.05
-        + match.preference_match * 0.05
     )
+    assert match.evidence["aggregation"]["excluded_components"] == ["preference"]
+    assert match.final_score == pytest.approx(expected_numerator / 0.95)
     with pytest.raises(ValueError, match="sum to 1"):
         MatchingWeights(role=0.1)
 
@@ -217,6 +218,8 @@ def test_missing_fields_use_neutral_scores_and_rejected_jobs_do_not_rank() -> No
     assert result.experience_match == 0.5
     assert result.location_match == 0.5
     assert result.domain_match == 0.5
+    assert result.final_score == 0.0
+    assert result.evidence["aggregation"]["denominator"] == 0.0
     with pytest.raises(RejectedJobError):
         HybridJobMatcher().match(
             job,
@@ -238,3 +241,86 @@ def test_non_ai_role_is_role_agnostic_and_results_are_reproducible() -> None:
 
     assert first.role_match == 1.0
     assert first.final_score == second.final_score
+
+
+def test_missing_preference_signal_gets_no_positive_credit() -> None:
+    result = HybridJobMatcher().match(make_job(), make_profile())
+
+    aggregation = result.evidence["aggregation"]
+    assert result.preference_match == 0.5
+    assert result.evidence["components"]["preference"]["available"] is False
+    assert "preference" in aggregation["excluded_components"]
+    assert result.evidence["weighted_scores"]["preference"] == 0.0
+    assert aggregation["denominator"] == pytest.approx(0.95)
+
+
+def test_real_zero_mismatch_is_available_and_remains_in_denominator() -> None:
+    result = HybridJobMatcher().match(
+        make_job(domain="Healthcare"),
+        make_profile(),
+    )
+
+    aggregation = result.evidence["aggregation"]
+    assert result.domain_match == 0.0
+    assert result.evidence["components"]["domain"]["available"] is True
+    assert "domain" in aggregation["included_components"]
+    assert aggregation["denominator"] == pytest.approx(0.95)
+
+
+def test_known_half_score_is_not_treated_as_missing() -> None:
+    profile = make_profile(
+        preferences=CandidatePreferences(
+            preferred_employment_types=["full_time"],
+            preferred_domains=["Healthcare"],
+        )
+    )
+    result = HybridJobMatcher().match(
+        make_job(employment_type="full_time", domain="Payments"),
+        profile,
+    )
+
+    assert result.preference_match == 0.5
+    assert result.evidence["components"]["preference"]["available"] is True
+    assert "preference" in result.evidence["aggregation"]["included_components"]
+
+
+def test_missing_component_renormalizes_observed_weights() -> None:
+    result = HybridJobMatcher().match(make_job(), make_profile())
+    scores = result.evidence["scores"]
+    weights = result.evidence["weights"]
+    included = result.evidence["aggregation"]["included_components"]
+    expected = sum(scores[name] * weights[name] for name in included) / sum(
+        weights[name] for name in included
+    )
+
+    assert result.final_score == pytest.approx(expected)
+    assert result.final_score != pytest.approx(
+        sum(scores[name] * weights[name] for name in scores)
+    )
+
+
+def test_all_known_components_preserve_previous_weighted_mean() -> None:
+    profile = make_profile(
+        preferences=CandidatePreferences(
+            preferred_employment_types=["full_time"],
+            preferred_domains=["Payments"],
+        )
+    )
+    result = HybridJobMatcher().match(make_job(employment_type="full_time"), profile)
+
+    scores = result.evidence["scores"]
+    weights = result.evidence["weights"]
+    assert result.evidence["aggregation"]["excluded_components"] == []
+    assert result.final_score == pytest.approx(
+        sum(scores[name] * weights[name] for name in scores)
+    )
+
+
+def test_availability_metadata_is_stable_and_interpretable() -> None:
+    matcher = HybridJobMatcher()
+    first = matcher.match(make_job(), make_profile())
+    second = matcher.match(make_job(), make_profile())
+
+    assert first.evidence == second.evidence
+    for details in first.evidence["components"].values():
+        assert details["availability"] in {"available", "unknown"}

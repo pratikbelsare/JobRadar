@@ -24,18 +24,25 @@ from .models import (
     JobMatchExplanation,
     JobRequirements,
 )
+from .openai_compatible import (
+    HttpOpenAICompatibleClient,
+    OpenAICompatibleChatProvider,
+    OpenAICompatibleClient,
+)
 from .profile import merge_candidate_profile_proposal
-from .protocols import AIProvider, TextEmbeddingProvider
+from .protocols import AIProvider, ChatModelProvider, TextEmbeddingProvider
 from .providers import (
     AIProviders,
     build_ai_providers,
     build_embedding_provider,
     build_llm_provider,
+    configured_llm_model_id,
 )
 
 __all__ = [
     "AIConfigurationError",
     "AIProvider",
+    "ChatModelProvider",
     "AIProviderError",
     "AIResponseError",
     "AIResponseMetadata",
@@ -46,13 +53,17 @@ __all__ = [
     "AIValidationError",
     "BedrockProvider",
     "BedrockMantleProvider",
+    "HttpOpenAICompatibleClient",
     "HuggingFaceEmbeddingProvider",
     "MantleClient",
     "SignedMantleClient",
+    "OpenAICompatibleChatProvider",
+    "OpenAICompatibleClient",
     "AIProviders",
     "build_ai_providers",
     "build_embedding_provider",
     "build_llm_provider",
+    "configured_llm_model_id",
     "CandidateProfileProposal",
     "EmbeddingVector",
     "ExplanationContext",

@@ -102,6 +102,20 @@ def test_greenhouse_connector_lists_and_retrieves_typed_jobs() -> None:
     assert len(transport.calls) == 2
 
 
+def test_greenhouse_connector_reuses_full_content_from_listing() -> None:
+    company = make_company()
+    client, transport = make_client(lambda _: json_response({"jobs": [detail()]}))
+    connector = GreenhouseConnector(client, api_base_url="https://api.test")
+
+    listing_result = connector.list_jobs(company)
+    detail_result = connector.get_job(listing_result.jobs[0])
+
+    assert detail_result.status == ConnectorStatus.SUCCESS
+    assert detail_result.job is not None
+    assert detail_result.job.description.startswith("<p>Build")
+    assert len(transport.calls) == 1
+
+
 def test_greenhouse_connector_handles_pagination() -> None:
     company = make_company()
     page_one = [listing(job_id=index) for index in range(2)]

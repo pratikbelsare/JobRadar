@@ -118,14 +118,14 @@ class JobRadarApplication:
             if title and title.casefold() not in job.title.casefold():
                 continue
             if min_match_score is not None and (
-                match is None or match.final_score < min_match_score
+                match is None or _primary_score(match) < min_match_score
             ):
                 continue
             views.append(self._view(job, company_record, match, feedback))
 
         if sort_by == "score":
             views.sort(
-                key=lambda item: item.match.final_score if item.match else 0.0,
+                key=lambda item: _primary_score(item.match) if item.match else 0.0,
                 reverse=descending,
             )
         else:
@@ -223,3 +223,9 @@ def _company_matches(company: Company | None, company_id: UUID, query: str) -> b
     return normalized in str(company_id).casefold() or (
         company is not None and normalized in company.name.casefold()
     )
+
+
+def _primary_score(match: JobMatch) -> float:
+    """Use relevance for presentation while preserving legacy records."""
+
+    return match.relevance_score if match.relevance_score is not None else match.final_score

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from enum import Enum
+from pathlib import Path
 from typing import Any
 
 from pydantic import Field, NonNegativeFloat, model_validator
@@ -11,6 +12,14 @@ from pydantic import Field, NonNegativeFloat, model_validator
 from .config import Settings
 from .models import CandidateProfile, Job, Model, WorkMode
 from .normalization import normalize_text
+from .role_policy import (
+    RoleFamilyClass,
+    RoleFamilyClassifier,
+    RoleFamilyMatch,
+    RoleFamilyPolicy,
+    UnknownRoleAction,
+    default_ai_data_role_family_policy,
+)
 
 
 class FilterOutcome(str, Enum):
@@ -36,6 +45,15 @@ class RuleStatus(str, Enum):
     REJECT = "reject"
 
 
+class ExperienceFitStatus(str, Enum):
+    """Experience fit kept independent from role-family eligibility."""
+
+    ALIGNED = "aligned"
+    STRETCH = "stretch"
+    SEVERE_GAP = "severe_gap"
+    UNKNOWN = "unknown"
+
+
 class ExperienceFilterConfig(Model):
     """Configurable gaps used to classify under-qualified roles."""
 
@@ -57,6 +75,7 @@ class FilteringConfig(Model):
     location_aliases: dict[str, list[str]] = Field(default_factory=dict)
     excluded_role_terms: list[str] = Field(default_factory=list)
     excluded_terms: list[str] = Field(default_factory=list)
+    role_policy: RoleFamilyPolicy | None = None
 
     @classmethod
     def from_settings(
@@ -67,6 +86,7 @@ class FilteringConfig(Model):
         location_aliases: dict[str, list[str]] | None = None,
         excluded_role_terms: list[str] | None = None,
         excluded_terms: list[str] | None = None,
+        role_policy: RoleFamilyPolicy | None = None,
     ) -> FilteringConfig:
         acceptable_gap = settings.filter_acceptable_experience_gap_years
         max_stretch_gap = settings.filter_max_stretch_experience_gap_years
@@ -86,6 +106,7 @@ class FilteringConfig(Model):
             location_aliases=location_aliases or {},
             excluded_role_terms=excluded_role_terms or [],
             excluded_terms=excluded_terms or [],
+            role_policy=role_policy or _role_policy_from_settings(settings),
         )
 
 
@@ -146,6 +167,9 @@ class DeterministicJobFilter:
         )
 
     def _evaluate_role(self, job: Job, profile: CandidateProfile) -> FilterRuleResult:
+        if self._config.role_policy is not None:
+            return self._evaluate_role_family(job, profile, self._config.role_policy)
+
         title = _key(job.title)
         excluded_terms = _terms(self._config.excluded_role_terms)
         matched_exclusion = _first_term_match(title, excluded_terms)
@@ -194,6 +218,118 @@ class DeterministicJobFilter:
             "Job title does not match any configured target role or alias.",
             title=job.title,
             target_roles=list(profile.target_roles),
+        )
+
+    def _evaluate_role_family(
+        self,
+        job: Job,
+        profile: CandidateProfile,
+        policy: RoleFamilyPolicy,
+    ) -> FilterRuleResult:
+        title = _key(job.title)
+        matched_exclusion = _first_term_match(
+            title,
+            _terms(self._config.excluded_role_terms),
+        )
+        if matched_exclusion:
+            return _rule(
+                FilterRule.ROLE,
+                RuleStatus.REJECT,
+                False,
+                f"Job title contains excluded role term '{matched_exclusion}'.",
+                title=job.title,
+                excluded_term=matched_exclusion,
+                decision_code="reject_role_family",
+            )
+        if not profile.target_roles:
+            return _rule(
+                FilterRule.ROLE,
+                RuleStatus.PASS,
+                True,
+                "No target roles are configured; role-family filtering is not restrictive.",
+                title=job.title,
+                decision_code="pass_unrestricted_role",
+            )
+
+        classification = RoleFamilyClassifier(policy).classify_with_evidence(job.title)
+        match = classification.match
+        details = _role_family_details(match)
+        details.update(
+            {
+                "original_title": classification.title.original_title,
+                "normalized_title": classification.title.normalized_title,
+                "base_title": classification.title.base_title,
+                "detected_seniority": [
+                    value.value for value in classification.title.seniority
+                ],
+                "detected_level": classification.title.level,
+                "specializations": classification.title.specializations,
+                "title_annotations": classification.title.annotations,
+                "title_transformations": classification.title.transformations,
+                "title_used_for_match": classification.title_used_for_match,
+                "classification_reason": classification.reason,
+            }
+        )
+        if match.classification is None:
+            if any(_key(job.title) == _key(target) for target in profile.target_roles):
+                return _rule(
+                    FilterRule.ROLE,
+                    RuleStatus.PASS,
+                    True,
+                    (
+                        "Job title exactly matches an explicitly configured target role; "
+                        "no role family was assigned."
+                    ),
+                    **details,
+                    decision_code="pass_configured_target_role",
+                )
+            if policy.unknown_role_action == UnknownRoleAction.PASS:
+                return _rule(
+                    FilterRule.ROLE,
+                    RuleStatus.ACCEPTABLE,
+                    True,
+                    "Role family is unknown; policy explicitly allows it through for review.",
+                    **details,
+                    decision_code="unknown_role_family",
+                )
+            return _rule(
+                FilterRule.ROLE,
+                RuleStatus.REJECT,
+                False,
+                (
+                    "Role title does not match a configured role family; conservative "
+                    "policy rejects it."
+                ),
+                **details,
+                decision_code="unknown_role_family",
+            )
+
+        family_name = match.canonical_name or match.family_id or "configured family"
+        if (
+            match.classification == RoleFamilyClass.EXCLUDE
+            or not policy.is_eligible(policy.family_by_id(match.family_id or ""))
+        ):
+            return _rule(
+                FilterRule.ROLE,
+                RuleStatus.REJECT,
+                False,
+                f"Role family '{family_name}' is explicitly excluded from Stage-1 analysis.",
+                **details,
+                decision_code="reject_role_family",
+            )
+
+        decision_code = (
+            "pass_core_role"
+            if match.classification == RoleFamilyClass.CORE
+            else "pass_adjacent_role"
+        )
+        return _rule(
+            FilterRule.ROLE,
+            RuleStatus.PASS,
+            True,
+            f"Role family '{family_name}' is eligible for Stage-1 analysis.",
+            **details,
+            decision_code=decision_code,
         )
 
     def _evaluate_location(self, job: Job, profile: CandidateProfile) -> FilterRuleResult:
@@ -253,23 +389,34 @@ class DeterministicJobFilter:
 
         return _rule(
             FilterRule.LOCATION,
-            RuleStatus.REJECT,
-            False,
-            "Job location does not match configured location or work-mode preferences.",
+            RuleStatus.ACCEPTABLE,
+            True,
+            (
+                "Job location does not match configured preferences; preferences are "
+                "soft and do not reject the job."
+            ),
             job_location=job.location,
             preferred_locations=list(preferred_locations),
             preferred_work_modes=[mode.value for mode in preferred_modes],
+            preference_match=False,
         )
 
     def _evaluate_experience(self, job: Job, profile: CandidateProfile) -> FilterRuleResult:
         candidate_years = profile.experience_years
         minimum = job.min_experience_years
         maximum = job.max_experience_years
-        details = {
+        details: dict[str, Any] = {
             "candidate_years": candidate_years,
             "job_min_years": minimum,
             "job_max_years": maximum,
         }
+        experience_status = classify_experience_fit(
+            candidate_years,
+            minimum,
+            maximum,
+            self._config.experience,
+        )
+        details["experience_status"] = experience_status.value
         if minimum is None and maximum is None:
             return _rule(
                 FilterRule.EXPERIENCE,
@@ -382,6 +529,33 @@ class DeterministicJobFilter:
         )
 
 
+def classify_experience_fit(
+    candidate_years: float,
+    minimum_years: float | None,
+    maximum_years: float | None,
+    config: ExperienceFilterConfig,
+) -> ExperienceFitStatus:
+    """Classify numeric experience requirements without changing role eligibility.
+
+    The same function can later receive the fields copied from ``JobAnalysis``.  It
+    intentionally returns a status only; the existing configured filter thresholds
+    remain responsible for deciding whether a severe gap is a hard rejection.
+    """
+
+    if minimum_years is None and maximum_years is None:
+        return ExperienceFitStatus.UNKNOWN
+    if minimum_years is not None and candidate_years < minimum_years:
+        gap = minimum_years - candidate_years
+        if gap <= config.max_stretch_gap_years:
+            return (
+                ExperienceFitStatus.ALIGNED
+                if gap <= config.acceptable_gap_years
+                else ExperienceFitStatus.STRETCH
+            )
+        return ExperienceFitStatus.SEVERE_GAP
+    return ExperienceFitStatus.ALIGNED
+
+
 def _rule(
     rule: FilterRule,
     status: RuleStatus,
@@ -396,6 +570,38 @@ def _rule(
         reason=reason,
         details=details,
     )
+
+
+def _role_family_details(match: RoleFamilyMatch) -> dict[str, Any]:
+    return {
+        "role_family_id": match.family_id,
+        "role_family": match.canonical_name,
+        "role_family_class": match.classification.value if match.classification else None,
+        "matched_by": match.matched_by.value if match.matched_by else None,
+        "matched_term": match.matched_term,
+    }
+
+
+def _role_policy_from_settings(settings: Settings) -> RoleFamilyPolicy:
+    if settings.role_family_policy_file is not None:
+        try:
+            return RoleFamilyPolicy.model_validate_json(
+                Path(settings.role_family_policy_file).read_text(encoding="utf-8")
+            )
+        except OSError as exc:
+            raise ValueError(
+                f"Could not read role-family policy file: {settings.role_family_policy_file}"
+            ) from exc
+        except ValueError as exc:
+            raise ValueError(
+                f"Role-family policy file is not valid: {settings.role_family_policy_file}"
+            ) from exc
+    if settings.role_family_policy_json is not None:
+        try:
+            return RoleFamilyPolicy.model_validate_json(settings.role_family_policy_json)
+        except ValueError as exc:
+            raise ValueError("JOB_INTELLIGENCE_ROLE_FAMILY_POLICY_JSON is not valid") from exc
+    return default_ai_data_role_family_policy()
 
 
 def _rejected(outcome: FilterOutcome, rules: list[FilterRuleResult]) -> FilterResult:
@@ -451,7 +657,7 @@ def _first_location_match(
 
 
 def _preferred_work_modes(profile: CandidateProfile) -> list[WorkMode]:
-    modes = [
+    modes: list[WorkMode] = [
         mode
         for mode in profile.preferences.preferred_work_modes
         if mode != WorkMode.UNKNOWN
@@ -472,10 +678,12 @@ def _is_remote(job: Job) -> bool:
 __all__ = [
     "DeterministicJobFilter",
     "ExperienceFilterConfig",
+    "ExperienceFitStatus",
     "FilterOutcome",
     "FilterResult",
     "FilterRule",
     "FilterRuleResult",
     "FilteringConfig",
     "RuleStatus",
+    "classify_experience_fit",
 ]

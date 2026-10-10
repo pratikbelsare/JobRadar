@@ -6,14 +6,18 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..ai import build_ai_providers
+from ..assessment import JobAssessmentService
 from ..company_repository import CompanyRepository
 from ..config import Settings
 from ..connectors import ConnectorRegistry
+from ..eligibility import EligibilityConfig, EligibilityEvaluator
 from ..filtering import DeterministicJobFilter, FilteringConfig
 from ..http import HttpClient
 from ..ingestion import JobIngestionService
 from ..job_repository import JobRepository
+from ..matching import HybridJobMatcher, MatchingConfig
 from ..profile_repository import CandidateProfileRepository
+from ..role_policy import RoleFamilyClassifier, default_ai_data_role_family_policy
 from ..snapshots import RawSnapshotStore
 from .dynamodb import (
     DynamoCandidateProfileRepository,
@@ -110,6 +114,18 @@ def build_analysis_worker(settings: Settings | None = None) -> JobAnalysisWorker
     configured = settings or Settings.from_environment()
     clients = create_aws_clients(configured)
     providers = build_ai_providers(configured)
+    matcher = HybridJobMatcher(
+        MatchingConfig(),
+        embedding_provider=providers.embeddings,
+    )
+    filtering = FilteringConfig.from_settings(configured)
+    assessment = JobAssessmentService(
+        matcher=matcher,
+        eligibility=EligibilityEvaluator(EligibilityConfig.from_settings(configured)),
+        role_families=RoleFamilyClassifier(
+            filtering.role_policy or default_ai_data_role_family_policy()
+        ),
+    )
     return JobAnalysisWorker(
         jobs=_job_repository(clients.table),
         profiles=_profile_repository(clients.table),
@@ -117,6 +133,8 @@ def build_analysis_worker(settings: Settings | None = None) -> JobAnalysisWorker
         matches=DynamoJobMatchRepository(clients.table),
         provider=providers.llm,
         embedding_provider=providers.embeddings,
+        matcher=matcher,
+        assessment_service=assessment,
         model_id=_required(
             configured.job_analysis_model_id,
             "JOB_INTELLIGENCE_JOB_ANALYSIS_MODEL_ID",
