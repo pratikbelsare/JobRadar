@@ -1,0 +1,2135 @@
+{
+  "results": [
+    {
+      "job_id": "7a76349f-63dc-574e-bd42-ea57dbdd60e7",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 5.0,
+          "minimum_experience_years": 3.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "167f0423-80bb-5419-b0b5-f1cba93b3678",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 8.0,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "849b63d0-96b3-5bbc-a82d-9198d71b8521",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 1.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.0,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "197d6a9d-d27d-5ada-ae5b-b1f5b53a3213",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "internship",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "intern"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_aligned",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "aligned",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "d50e66d9-e7bc-52a5-8b19-58ee9b0101ea",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "associate"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_aligned",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "aligned",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "dace597a-b919-5354-a150-37aa017fe0c3",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 1.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.0,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "ed647e18-d2d0-5b8e-9884-3147c9d4abc5",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "ed66f243-aba8-505e-a9de-d5a088375221",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "8c080b3d-f348-5042-93dc-396d56f842f6",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "05563f5b-416b-578d-8ba3-6909df85afda",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "8848ff05-4a77-5108-b1e5-6674a3b73f8b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "1eb98dee-3d87-53c2-a896-ab9596a93704",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "699924a0-1415-517e-b3d4-4b667cfc270d",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "a8626022-7d34-58dd-b2b8-8481daa67c8d",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "f997ea3e-da2f-5177-963b-868892d28486",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "55744223-3e8a-5559-83dd-5328c2f6b004",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "412ed884-e0ca-5214-855b-52941a56c430",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "2dfa0068-d628-5b14-a9d3-ca30543da514",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "326aacc7-d4d2-5ee9-8f30-4c3d0d3fe089",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "23ddbdc1-b790-5bdc-a2dc-6e9760e3514b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "a3abc69b-ffb7-5775-b326-a48278ac047e",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 7.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 5.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "b9e3bd26-2888-5029-9ebf-7cd1b3144b0e",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "2b08d9d4-6fef-5fee-83c8-594ecceba267",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "466aad97-5421-5a2d-bc05-273947eaf704",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "9a4ec0ff-21b3-5bb9-8454-d116264fb035",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 7.0,
+          "minimum_experience_years": 5.5,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 4.3,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "21887bfe-6634-52d8-9e23-bdc064604e62",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "4b9a4874-1ea0-551f-a791-f5d81290118c",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 7.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 5.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "0ca8624e-f1fe-52b0-ae86-40c6d6d758c7",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "93249c2f-dee7-51ab-8d94-6f32851930dd",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "principal"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "7af9822e-6ca5-580a-ab16-10d818a75462",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "3ca9d0e2-8076-50e0-9b17-eaafea5237e6",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "40689f9a-e5a1-56f4-9291-833c0c29e6c5",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "manager"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "ca5372a3-aa4d-50ec-9abd-ea25d84a8488",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "06a06090-1fb8-552c-a1b7-ac4f44095963",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "c91d7d20-3b29-5126-b64f-4b5358babcd1",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "principal"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "core",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "eac81dfb-f4fe-5d3d-8ff3-7120baa1ec51",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "lead"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "9f5d1778-cea1-5f35-82eb-2656e8cb8f78",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "7dc956d8-1964-5ca9-988d-5dfe498868b0",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "7d856180-ca7e-51e3-b8a1-a6fa37a081c2",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "260727e0-cfe1-56bf-8745-712b90bbbe89",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "77338eff-0068-5499-a6d0-efa2366e8dee",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "dbf79949-23ee-5a97-b8dd-86ff50642134",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "3f5c0298-334b-5f80-83e5-ce70ca49c064",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "82c85a50-1662-5c92-9f39-65860a0c23de",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "ffdee317-0e6d-56b1-829e-df54b80b3827",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "492be80a-329f-5a53-a786-155bc581ce94",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 7.0,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "518fd7b5-08b4-5ca7-af1b-ac3165247996",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "adjacent",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "04fe8b4e-417b-5f6b-a376-e2681b86c065",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 10.0,
+          "seniority": "director"
+        },
+        "experience_gap_years": 8.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "1e4ef80f-8c83-5978-8709-ea9619d87e0a",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "adjacent",
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "f619df20-cd05-52f1-8a3e-c31629fd9659",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 7.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 5.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "321cd88c-7cbd-519d-ae6d-60000ac838b3",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 6.0,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "4065ff39-eea0-56da-8396-75ddf975045c",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "director"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "8245a364-8786-5a8e-9c10-d139596ea1fe",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "manager"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "82dedc45-fb6e-5e72-8e74-11d41db359b0",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "adjacent",
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "6f76ba78-2468-5e58-9dec-6c9a07d3850b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "adjacent",
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "5f7c30d7-67f2-5396-92a9-1e1c5fb7065b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "5c713afc-8b82-5864-bc48-bddd8e6b3476",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 1.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.0,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "exclude",
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "4e170f76-7933-5b6b-ae9a-cde33390212a",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "exclude",
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "61de5026-b963-52b6-9307-1471adf6c6e2",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "6bdd2f20-1146-56be-ac9f-9bf9a84847a5",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "mid"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_aligned",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "aligned",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "7a8b07b6-64f3-5f1b-9551-145fb4ae8da9",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "9a634974-2928-564e-819c-1be282bd583f",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": 5.0,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "04005392-340f-5517-a16a-c6ebc590868e",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "director"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "d886f0ee-bb49-5171-a0d5-67a3d67978fb",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 10.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 8.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "081f9eda-9b96-512a-b71c-f2fe0ff1d6cb",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "9e128627-a029-5b93-a777-eb1053ad7f6d",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "exclude",
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "172b85d9-3796-53c7-afcd-d2307fa17455",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "46f05116-c38e-500a-8632-e45fa9d8769f",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "55e1ef6a-b18c-558d-8fad-ada0df587444",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 7.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 5.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "51140461-e9f7-5dc5-977b-6aa009ca053b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 8.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "311ccaf2-0ca4-539f-9cfc-301fd236a923",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "b98d1389-e713-580b-9aa4-129c6659e49e",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 7.0,
+          "minimum_experience_years": 4.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "education_not_verifiable_as_mandatory"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "8427d9e9-4361-5f3a-9e96-d53c18477613",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "internship",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "intern"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_aligned",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "aligned",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "578f90db-2440-5499-b366-b4d4ae50bdab",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 5.0,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "exclude",
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "c0d75d49-3616-50b0-87a4-658cb419029d",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 3.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 1.8,
+        "experience_status": "stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "c9b09959-3394-5e7d-b63d-9ba30ca3ff0a",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "senior"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": "exclude",
+        "seniority_status": "elevated",
+        "status": "stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "d218a682-8690-577c-86e2-05af5819e3a4",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 10.0,
+          "minimum_experience_years": 7.0,
+          "seniority": "lead"
+        },
+        "experience_gap_years": 5.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "ded8d1d8-587d-515d-98f3-3a9715ad9c10",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "full_time",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 4.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 2.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "0da7792c-9f4f-5b93-9677-fe9a71e57b7e",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": null,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": null,
+        "experience_status": "unknown",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_unknown",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "unknown",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "6778437c-6466-53e3-8173-02ce123affb5",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 10.0,
+          "minimum_experience_years": 8.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 6.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "36935585-afe3-590b-bcc8-dd10384ccb0b",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 15.0,
+          "seniority": "senior"
+        },
+        "experience_gap_years": 13.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_elevated",
+          "education_not_verifiable_as_mandatory",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "elevated",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "63ffb32f-629a-5e86-9aef-b032036895fc",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 8.0,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "50273938-6d47-53b0-b27f-995d44f9f474",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": null,
+          "minimum_experience_years": 2.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 0.8,
+        "experience_status": "aligned",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_aligned",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "eligible",
+        "visible": true
+      }
+    },
+    {
+      "job_id": "efcb35d6-b3c5-5213-8f1a-b47bdd6efbf7",
+      "result": {
+        "details": {
+          "candidate_experience_years": 1.2,
+          "employment_type": "unknown",
+          "maximum_experience_years": 10.0,
+          "minimum_experience_years": 5.0,
+          "seniority": "unknown"
+        },
+        "experience_gap_years": 3.8,
+        "experience_status": "severe_stretch",
+        "hard_block_reasons": [],
+        "reason_codes": [
+          "experience_severe_stretch",
+          "seniority_unknown",
+          "skills_are_not_hard_blockers"
+        ],
+        "recommended_to_retain": true,
+        "role_family_class": null,
+        "seniority_status": "unknown",
+        "status": "severe_stretch",
+        "visible": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+build/
+dist/
+.aws-sam/
+
+# Local and generated data
+data/*
+!data/sample/
+!data/sample/**
+evaluation/results/
+evaluation/profile/
+coordinator-response.json
+
+# Local model/download caches
+.cache/
+.huggingface/
+models/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

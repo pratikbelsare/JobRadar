@@ -1,0 +1,351 @@
+{
+  "domains": [
+    "Machine Learning",
+    "Forecasting",
+    "Optimization",
+    "Generative AI",
+    "Procurement Analytics",
+    "Operations Research",
+    "RAG / Information Retrieval"
+  ],
+  "education": [
+    {
+      "completion_year": 2025,
+      "degree": "M.Tech",
+      "field_of_study": "Decision Science & Engineering",
+      "institution": "Example Institute of Technology"
+    },
+    {
+      "completion_year": 2023,
+      "degree": "B.Tech",
+      "field_of_study": "Civil Engineering",
+      "institution": "Example College of Engineering"
+    }
+  ],
+  "experience_years": 1.2,
+  "hard_constraints": {
+    "excluded_employment_types": [],
+    "excluded_locations": [],
+    "excluded_terms": [],
+    "remote_only": false,
+    "work_authorization_required": null
+  },
+  "id": "10000000-0000-4000-8000-000000000001",
+  "preferences": {
+    "preferred_domains": [],
+    "preferred_employment_types": [],
+    "preferred_work_modes": []
+  },
+  "preferred_locations": [
+    "Bengaluru",
+    "Hyderabad",
+    "Remote"
+  ],
+  "profile_key": "candidate_001",
+  "projects": [
+    {
+      "description": "Representative procurement analytics project combining demand and price forecasting, ETL, feature engineering, model evaluation, supplier allocation, optimization, and reporting over multi-year transactional and time-series data.",
+      "name": "Procurement forecasting and optimization",
+      "skills": [
+        "Forecasting",
+        "ARIMA",
+        "SARIMA",
+        "XGBoost",
+        "LightGBM",
+        "CatBoost",
+        "Random Forest",
+        "N-BEATS",
+        "NHITS",
+        "PuLP",
+        "Python",
+        "SQL",
+        "AWS S3",
+        "Athena",
+        "Pandas",
+        "NumPy",
+        "Streamlit"
+      ]
+    },
+    {
+      "description": "Representative retrieval-augmented-generation proof of concept using an OpenAI-compatible model, Semantic Kernel, document storage, embeddings, semantic search, document chunking, authentication, conversation history, feedback, and Streamlit.",
+      "name": "Generative AI / RAG proof of concept",
+      "skills": [
+        "Azure OpenAI",
+        "Semantic Kernel",
+        "Cosmos DB",
+        "RAG",
+        "Embeddings",
+        "Semantic Search",
+        "Streamlit"
+      ]
+    },
+    {
+      "description": "Representative graduate research project involving MILP, Gurobi, vehicle-routing optimization, and multi-compartment routing.",
+      "name": "Graduate vehicle-routing optimization project",
+      "skills": [
+        "MILP",
+        "Gurobi",
+        "Vehicle Routing",
+        "Optimization"
+      ]
+    }
+  ],
+  "skill_evidence": {
+    "ARIMA": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for current demand and price forecasting."
+      }
+    ],
+    "AWS S3": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used as a data source for the current procurement intelligence pipelines."
+      }
+    ],
+    "Athena": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used with AWS data sources for the current procurement intelligence work."
+      }
+    ],
+    "Azure OpenAI": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in a generative-AI RAG proof of concept, not a production deployment."
+      }
+    ],
+    "CatBoost": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for the current time-series forecasting and modeling work."
+      }
+    ],
+    "Cosmos DB": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for the RAG proof of concept's document and conversation data."
+      }
+    ],
+    "EC2": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Included in the current role's AWS exposure for pipeline and deployment work."
+      }
+    ],
+    "Embeddings": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the RAG proof of concept for semantic search."
+      }
+    ],
+    "EventBridge": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Included in the current role's AWS exposure for pipeline and deployment work."
+      }
+    ],
+    "Gurobi": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for optimization work during the internship and the M.Tech thesis."
+      }
+    ],
+    "Lambda": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Included in the current role's AWS exposure for pipeline and deployment work."
+      }
+    ],
+    "LightGBM": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for the current time-series forecasting and modeling work."
+      }
+    ],
+    "Machine Learning": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the current procurement forecasting and intelligence solution."
+      }
+    ],
+    "N-BEATS": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for current time-series forecasting."
+      }
+    ],
+    "NHITS": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for current time-series forecasting."
+      }
+    ],
+    "NumPy": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the current forecasting and data-pipeline work."
+      }
+    ],
+    "OR-Tools": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for optimization work during the operations-research internship."
+      }
+    ],
+    "Pandas": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the current forecasting and data-pipeline work."
+      }
+    ],
+    "PuLP": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for procurement allocation optimization with linear-programming or MILP-style constraints."
+      }
+    ],
+    "Python": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the current forecasting, procurement optimization, and RAG work, and during the optimization internship."
+      }
+    ],
+    "RAG": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Built a retrieval-augmented-generation proof of concept with document chunking, semantic search, authentication, conversation history, and feedback enrichment."
+      }
+    ],
+    "Random Forest": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for the current time-series forecasting and modeling work."
+      }
+    ],
+    "SARIMA": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for current demand and price forecasting."
+      }
+    ],
+    "SQL": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in current machine-learning and data work."
+      }
+    ],
+    "Semantic Kernel": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in a generative-AI RAG proof of concept, not a production deployment."
+      }
+    ],
+    "Semantic Search": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the RAG proof of concept with document chunking and embeddings."
+      }
+    ],
+    "Streamlit": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for current reporting and dashboarding and for the RAG proof-of-concept interface."
+      }
+    ],
+    "XGBoost": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used for the current time-series forecasting and modeling work."
+      }
+    ],
+    "scikit-learn": [
+      {
+        "source": "public_benchmark_profile",
+        "text": "Used in the current forecasting and machine-learning work."
+      }
+    ]
+  },
+  "skills": [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "XGBoost",
+    "LightGBM",
+    "CatBoost",
+    "Random Forest",
+    "ARIMA",
+    "SARIMA",
+    "N-BEATS",
+    "NHITS",
+    "PuLP",
+    "Gurobi",
+    "OR-Tools",
+    "AWS",
+    "AWS S3",
+    "Athena",
+    "Lambda",
+    "EC2",
+    "EventBridge",
+    "Pandas",
+    "NumPy",
+    "scikit-learn",
+    "Azure OpenAI",
+    "Semantic Kernel",
+    "Cosmos DB",
+    "RAG",
+    "Embeddings",
+    "Semantic Search",
+    "Streamlit"
+  ],
+  "target_roles": [
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Data Scientist"
+  ],
+  "work_experience": [
+    {
+      "description": "Built representative procurement analytics workflows covering forecasting, supplier allocation, optimization, data pipelines, feature engineering, model evaluation, and dashboarding. The work used AWS data services, statistical forecasting, tree-based models, neural forecasting, and mathematical optimization.",
+      "employer": "Technology Company",
+      "end_date": null,
+      "role": "Machine Learning Engineer",
+      "skills": [
+        "Python",
+        "SQL",
+        "Machine Learning",
+        "XGBoost",
+        "LightGBM",
+        "CatBoost",
+        "Random Forest",
+        "ARIMA",
+        "SARIMA",
+        "N-BEATS",
+        "NHITS",
+        "PuLP",
+        "AWS S3",
+        "Athena",
+        "Lambda",
+        "EC2",
+        "EventBridge",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "Streamlit"
+      ],
+      "start_date": "2025-06-01"
+    },
+    {
+      "description": "Worked on optimization and operations-research problems involving MILP, CVRPTW, vehicle compatibility, and capacity and time-window constraints using Python, Gurobi, and OR-Tools.",
+      "employer": "Optimization Consulting Firm",
+      "end_date": "2024-08-01",
+      "role": "Optimization / Operations Research Intern",
+      "skills": [
+        "Python",
+        "Gurobi",
+        "OR-Tools"
+      ],
+      "start_date": "2024-05-01"
+    }
+  ],
+  "work_mode": null
+}

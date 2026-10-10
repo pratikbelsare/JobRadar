@@ -1,0 +1,42 @@
+[
+  {
+    "id": "4ce5b87d-a818-5ab6-804a-a0fd3834c6a5",
+    "name": "Moloco",
+    "career_url": "https://job-boards.greenhouse.io/moloco",
+    "connector_type": "greenhouse",
+    "connector_config": {"board_token": "moloco"},
+    "enabled": true
+  },
+  {
+    "id": "19ef83fe-c19f-5711-a1c0-1488333bbbd0",
+    "name": "Snorkel AI",
+    "career_url": "https://job-boards.greenhouse.io/snorkelai",
+    "connector_type": "greenhouse",
+    "connector_config": {"board_token": "snorkelai"},
+    "enabled": true
+  },
+  {
+    "id": "4390fd4b-2d41-55b8-8251-3412c0042925",
+    "name": "PhysicsX",
+    "career_url": "https://job-boards.greenhouse.io/physicsx",
+    "connector_type": "greenhouse",
+    "connector_config": {"board_token": "physicsx"},
+    "enabled": true
+  },
+  {
+    "id": "5c6739cf-e929-5743-8b86-c04a22672843",
+    "name": "Garner Health",
+    "career_url": "https://job-boards.greenhouse.io/garnerhealth",
+    "connector_type": "greenhouse",
+    "connector_config": {"board_token": "garnerhealth"},
+    "enabled": true
+  },
+  {
+    "id": "78cd5695-87ed-5244-97d9-217717bb119b",
+    "name": "Dialpad",
+    "career_url": "https://job-boards.greenhouse.io/dialpad",
+    "connector_type": "greenhouse",
+    "connector_config": {"board_token": "dialpad"},
+    "enabled": true
+  }
+]
